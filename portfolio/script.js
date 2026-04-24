@@ -322,6 +322,34 @@ function initModernMenu() {
     else nav.classList.remove('nav-hidden');
     lastY = y;
   }, { passive: true });
+
+  // Active pill link on scroll
+  const links = document.querySelectorAll('.pill-link');
+  const sections = document.querySelectorAll('section[id]');
+  const navH = 80;
+  window.addEventListener('scroll', () => {
+    let current = 'home';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - navH - 10) current = s.id;
+    });
+    links.forEach(l => {
+      l.classList.toggle('active', l.dataset.section === current);
+    });
+  }, { passive: true });
+
+  // Theme label update
+  const themeLabel = document.getElementById('theme-label');
+  function updateLabel() {
+    if (themeLabel) themeLabel.textContent = document.body.classList.contains('light-theme') ? 'Light' : 'Midnight';
+  }
+  updateLabel();
+  document.getElementById('theme-toggle')?.addEventListener('click', () => setTimeout(updateLabel, 50));
+
+  // Music pill button opens widget
+  document.getElementById('pill-music-btn')?.addEventListener('click', () => {
+    const widget = document.getElementById('musicWidget');
+    if (widget) widget.classList.toggle('hidden');
+  });
 }
 
 // ===== SECTION THEME COLORS =====

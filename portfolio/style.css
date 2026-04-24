@@ -187,91 +187,144 @@ body.light-theme {
 
 /* ===== NAVIGATION ===== */
 nav#main-nav {
-  position: fixed; top: 0; left: 0; right: 0;
+  position: fixed; top: 1.2rem; left: 0; right: 0;
   z-index: 1000;
-  background: rgba(13,13,13,.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--glass-border);
-  transition: transform .3s, background .3s;
-  height: var(--nav-h);
+  display: flex; justify-content: center; align-items: center;
+  pointer-events: none;
+  transition: transform .3s;
 }
-nav#main-nav.nav-hidden { transform: translateY(-100%); }
-body.light-theme nav#main-nav { background: rgba(245,245,245,.85); }
-.nav-inner {
-  max-width: 1200px; margin: 0 auto;
-  padding: 0 1.5rem;
-  height: 100%;
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 1rem;
+nav#main-nav.nav-hidden { transform: translateY(-120%); }
+
+/* Pill container */
+.pill-nav {
+  pointer-events: all;
+  display: flex; align-items: center; gap: .25rem;
+  background: rgba(10, 12, 20, 0.82);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 999px;
+  padding: .35rem .5rem;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 8px 32px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.04) inset;
 }
-.brand-name {
-  font-family: 'Oxanium', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 800;
-  letter-spacing: .15em;
-  background: linear-gradient(90deg, #ff0000, #ffd700);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  cursor: none;
+body.light-theme .pill-nav {
+  background: rgba(240,242,250,.88);
+  border-color: rgba(0,0,0,.1);
+  box-shadow: 0 8px 32px rgba(0,0,0,.15);
 }
-.nav-links { display: flex; gap: 2rem; }
-.menu-link {
-  font-size: .85rem;
+
+/* Generic pill item */
+.pill-item {
+  display: flex; align-items: center; gap: .4rem;
+  padding: .42rem .85rem;
+  border-radius: 999px;
+  font-size: .8rem;
   font-weight: 600;
-  letter-spacing: .08em;
-  color: var(--text2);
+  letter-spacing: .02em;
+  color: rgba(255,255,255,.55);
+  background: none;
+  border: none;
+  cursor: none;
   text-decoration: none;
-  transition: color .2s;
-  cursor: none;
+  transition: color .2s, background .2s;
+  white-space: nowrap;
 }
-.menu-link:hover { color: #ff0000; }
-.nav-right { display: flex; align-items: center; gap: .75rem; }
-.theme-btn {
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  color: var(--text);
-  width: 36px; height: 36px;
+body.light-theme .pill-item { color: rgba(0,0,0,.5); }
+.pill-item:hover { color: #fff; background: rgba(255,255,255,.07); }
+body.light-theme .pill-item:hover { color: #111; background: rgba(0,0,0,.06); }
+
+/* Active nav link */
+.pill-link.active {
+  background: #2563eb;
+  color: #fff !important;
+  box-shadow: 0 2px 12px rgba(37,99,235,.5);
+}
+.pill-link.active svg { stroke: #fff; }
+
+/* Theme button */
+.pill-theme {
+  gap: .45rem;
+  color: rgba(255,255,255,.7);
+}
+body.light-theme .pill-theme { color: rgba(0,0,0,.6); }
+.pill-theme-label {
+  font-size: .78rem;
+  font-weight: 600;
+}
+.pill-dot {
+  width: 6px; height: 6px;
   border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  cursor: none;
-  transition: background .2s, border-color .2s;
+  background: #22c55e;
+  box-shadow: 0 0 6px #22c55e;
+  flex-shrink: 0;
 }
-.theme-btn:hover { border-color: #ff0000; background: rgba(255,0,0,.1); }
-.hamburger {
-  display: none;
-  flex-direction: column; gap: 5px;
-  background: none; border: none;
-  cursor: none; padding: 4px;
+
+/* Music button */
+.pill-music {
+  color: rgba(255,255,255,.7);
+  gap: .4rem;
 }
-.hamburger span {
-  display: block; width: 22px; height: 2px;
-  background: var(--text);
-  border-radius: 2px;
-  transition: transform .3s, opacity .3s;
+body.light-theme .pill-music { color: rgba(0,0,0,.6); }
+.pill-music svg:first-child { animation: spin 4s linear infinite; }
+.pill-chevron { opacity: .5; }
+
+/* Divider */
+.pill-divider {
+  width: 1px; height: 20px;
+  background: rgba(255,255,255,.12);
+  margin: 0 .15rem;
+  flex-shrink: 0;
 }
+body.light-theme .pill-divider { background: rgba(0,0,0,.12); }
+
+/* Mobile hamburger — hidden on desktop */
+.hamburger { display: none; }
+
+/* Mobile menu */
 #mobile-menu {
   display: none;
   flex-direction: column;
-  background: rgba(13,13,13,.97);
-  border-top: 1px solid var(--glass-border);
-  padding: 1rem 1.5rem;
+  position: fixed; top: 0; left: 0; right: 0;
+  background: rgba(10,12,20,.97);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  padding: 4.5rem 1.5rem 1.5rem;
   gap: .25rem;
+  z-index: 999;
 }
 #mobile-menu.open { display: flex; }
 .mobile-link {
-  padding: .75rem 0;
-  font-size: .9rem;
+  padding: .75rem 1rem;
+  font-size: .95rem;
   font-weight: 600;
-  color: var(--text2);
+  color: rgba(255,255,255,.6);
   text-decoration: none;
-  border-bottom: 1px solid var(--glass-border);
-  transition: color .2s;
+  border-radius: 10px;
+  transition: color .2s, background .2s;
   cursor: none;
 }
-.mobile-link:hover { color: #ff0000; }
-.hidden { display: none !important; }
+.mobile-link:hover { color: #fff; background: rgba(255,255,255,.06); }
+
+/* Responsive */
+@media (max-width: 640px) {
+  .pill-nav { display: none; }
+  .hamburger {
+    display: flex;
+    position: fixed; top: 1rem; right: 1rem;
+    z-index: 1001;
+    flex-direction: column; gap: 5px;
+    background: rgba(10,12,20,.85);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 10px;
+    padding: .6rem;
+    pointer-events: all;
+    cursor: none;
+  }
+  .hamburger span {
+    display: block; width: 20px; height: 2px;
+    background: #fff; border-radius: 2px;
+    transition: transform .3s, opacity .3s;
+  }
+}
 
 
 /* ===== SECTION COMMON ===== */
@@ -309,7 +362,7 @@ body.light-theme nav#main-nav { background: rgba(245,245,245,.85); }
   min-height: 100vh;
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
-  padding-top: var(--nav-h);
+  padding-top: 5rem;
   padding-bottom: 2rem;
 }
 .hero-inner {
