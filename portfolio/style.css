@@ -197,19 +197,17 @@ body.light-theme {
 /* ===== DOT CURSOR ===== */
 #dot-cursor {
   position: fixed;
-  width: 12px; height: 12px;
-  background: linear-gradient(135deg, #ff0000, #ffd700);
-  border-radius: 50%;
   pointer-events: none;
   z-index: 99998;
   transform: translate(-50%, -50%);
-  transition: transform .1s, width .2s, height .2s, background .2s;
-  mix-blend-mode: screen;
+  transition: transform .1s;
+  line-height: 1;
+  user-select: none;
+  mix-blend-mode: normal;
 }
 #dot-cursor.cursor-hover {
-  width: 24px; height: 24px;
-  background: rgba(255,215,0,.6);
-  animation: cursorPulse .6s ease-in-out infinite;
+  transform: translate(-50%, -50%) scale(1.6);
+  filter: brightness(1.5);
 }
 
 /* ===== NAVIGATION ===== */
@@ -453,6 +451,75 @@ body[data-theme="default"] .mobile-link,
 body[data-theme="sakura"] .mobile-link,
 body[data-theme="amber"] .mobile-link,
 body[data-theme="mint"] .mobile-link { color: rgba(0,0,0,.6); }
+
+/* ===== SOCIAL ICONS — fix on light themes ===== */
+.social-icon-btn svg { fill: #ffffff; }
+body[data-theme="default"] .social-icon-btn,
+body[data-theme="sakura"] .social-icon-btn,
+body[data-theme="amber"] .social-icon-btn,
+body[data-theme="mint"] .social-icon-btn {
+  background: rgba(0,0,0,.08);
+  border-color: rgba(0,0,0,.15);
+}
+body[data-theme="default"] .social-icon-btn svg,
+body[data-theme="sakura"] .social-icon-btn svg,
+body[data-theme="amber"] .social-icon-btn svg,
+body[data-theme="mint"] .social-icon-btn svg { fill: #111111; }
+
+/* ===== PER-THEME BACKGROUND ANIMATIONS ===== */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity .6s;
+}
+
+/* Cyberpunk — scanlines */
+body[data-theme="cyberpunk"]::before {
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(250,204,21,.03) 2px, rgba(250,204,21,.03) 4px);
+  opacity: 1;
+  animation: scanlines 8s linear infinite;
+}
+@keyframes scanlines { from{background-position:0 0} to{background-position:0 100px} }
+
+/* Galaxy — nebula glow */
+body[data-theme="galaxy"]::before {
+  background: radial-gradient(ellipse at 20% 50%, rgba(168,85,247,.12) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(236,72,153,.1) 0%, transparent 50%),
+              radial-gradient(ellipse at 60% 80%, rgba(99,102,241,.08) 0%, transparent 50%);
+  opacity: 1;
+  animation: nebulaPulse 6s ease-in-out infinite alternate;
+}
+@keyframes nebulaPulse { from{opacity:.6} to{opacity:1} }
+
+/* Sakura — floating petals bg */
+body[data-theme="sakura"]::before {
+  background: radial-gradient(ellipse at 30% 30%, rgba(244,63,94,.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 70%, rgba(236,72,153,.06) 0%, transparent 50%);
+  opacity: 1;
+}
+
+/* Amber — warm glow */
+body[data-theme="amber"]::before {
+  background: radial-gradient(ellipse at 50% 100%, rgba(245,158,11,.12) 0%, transparent 60%);
+  opacity: 1;
+  animation: amberGlow 4s ease-in-out infinite alternate;
+}
+@keyframes amberGlow { from{opacity:.5} to{opacity:1} }
+
+/* Mint — cool radial */
+body[data-theme="mint"]::before {
+  background: radial-gradient(ellipse at 50% 0%, rgba(16,185,129,.1) 0%, transparent 60%);
+  opacity: 1;
+}
+
+/* Matrix — handled by canvas in loader, subtle green tint */
+body[data-theme="matrix"]::before {
+  background: radial-gradient(ellipse at 50% 50%, rgba(34,197,94,.04) 0%, transparent 70%);
+  opacity: 1;
+}
 
 /* Responsive */
 @media (max-width: 640px) {

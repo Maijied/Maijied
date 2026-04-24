@@ -95,6 +95,7 @@ function initSkills() {
     { name: 'Git/GitHub', pct: 85, icon: '🐙' },
     { name: 'React', pct: 78, icon: '⚛️' },
     { name: 'Node.js', pct: 76, icon: '🟢' },
+    { name: 'LLM / AI', pct: 90, icon: '🤖' },
     { name: 'Android', pct: 72, icon: '📱' },
     { name: 'C#/.NET', pct: 68, icon: '🔷' }
   ];
@@ -129,25 +130,44 @@ function initSkills() {
 
 
 // ===== FETCH PROJECTS =====
+const CUSTOM_PROJECTS = {
+  'Lorapok-Keyboard': {
+    desc: 'Professional high-performance Bengali input system for Android. Features a 2.3M+ word vocabulary, real-time context-aware AI prediction, and bridges phonetic typing with modern AI-driven communication.',
+    name: 'Lorapok Keyboard'
+  },
+  'lorapok': {
+    desc: 'Zero-Config Performance Monitoring for Laravel. Like soldier fly larvae transforming waste into nutrients, Lorapok transforms bottlenecks into speed — monitor routes, queries, and memory with real-time dashboards.',
+    name: 'Lorapok Laravel Monitor'
+  },
+  'Love-and-lust': {
+    desc: '"Life vs Greed – Protecting Cox\'s Bazar Forests" — a documentary-style site exposing illegal encroachment, elephant killings, and legal battles to protect 700+ acres of reserved forest in Inani Range.',
+    name: 'Life vs Greed'
+  }
+};
+
 async function fetchProjects() {
   const grid = document.getElementById('projects-grid');
   if (!grid) return;
   grid.innerHTML = '<div class="projects-loading">Loading repositories...</div>';
   const SKIP = ['Maijied'];
-  const COLORS = ['#ff0000','#ff6600','#ffd700','#00ff88','#0088ff','#aa00ff','#ff0088','#00ffff','#ff4444'];
+  const COLORS = ['var(--accent)','#ff6600','#ffd700','#00ff88','#0088ff','#aa00ff','#ff0088','#00ffff','#ff4444'];
   try {
     const res = await fetch('https://api.github.com/users/Maijied/repos?sort=updated&per_page=20');
     if (!res.ok) throw new Error('GitHub API error');
     const repos = await res.json();
     const filtered = repos.filter(r => !SKIP.includes(r.name)).slice(0, 9);
     if (!filtered.length) { grid.innerHTML = '<div class="projects-loading">No projects found.</div>'; return; }
-    grid.innerHTML = filtered.map((r, i) => `
+    grid.innerHTML = filtered.map((r, i) => {
+      const custom = CUSTOM_PROJECTS[r.name];
+      const name = custom?.name || r.name;
+      const desc = custom?.desc || r.description || 'No description provided.';
+      return `
       <div class="project-card" style="border-left-color:${COLORS[i % COLORS.length]}">
         <div class="project-card-header">
-          <span class="project-name">${r.name}</span>
+          <span class="project-name">${name}</span>
           <span class="project-stars">⭐ ${r.stargazers_count}</span>
         </div>
-        <p class="project-desc">${r.description || 'No description provided.'}</p>
+        <p class="project-desc">${desc}</p>
         <div class="project-footer">
           <span class="project-lang">${r.language || 'N/A'}</span>
           <div class="project-links">
@@ -155,9 +175,10 @@ async function fetchProjects() {
             ${r.homepage ? `<a href="${r.homepage}" target="_blank" class="project-link">Live</a>` : ''}
           </div>
         </div>
-      </div>`).join('');
+      </div>`;
+    }).join('');
   } catch (e) {
-    grid.innerHTML = '<div class="projects-loading">Could not load projects. <a href="https://github.com/Maijied?tab=repositories" target="_blank" style="color:#ff0000">View on GitHub</a></div>';
+    grid.innerHTML = '<div class="projects-loading">Could not load projects. <a href="https://github.com/Maijied?tab=repositories" target="_blank" style="color:var(--accent)">View on GitHub</a></div>';
   }
 }
 
@@ -340,7 +361,18 @@ function initLoadingScreen(themeName) {
   }, delay);
 }
 
-// ===== DOT CURSOR =====
+// ===== DOT CURSOR — theme-aware shape =====
+const CURSOR_SHAPES = {
+  midnight:  { char: '✦', size: 18 },
+  cyberpunk: { char: '◈', size: 20 },
+  matrix:    { char: '⬡', size: 18 },
+  galaxy:    { char: '✺', size: 20 },
+  default:   { char: '●', size: 14 },
+  sakura:    { char: '✿', size: 20 },
+  amber:     { char: '◆', size: 16 },
+  mint:      { char: '◉', size: 16 }
+};
+
 function initDotCursor() {
   const dot = document.getElementById('dot-cursor');
   if (!dot) return;
@@ -358,6 +390,19 @@ function initDotCursor() {
     el.addEventListener('mouseenter', () => dot.classList.add('cursor-hover'));
     el.addEventListener('mouseleave', () => dot.classList.remove('cursor-hover'));
   });
+}
+
+function updateCursorForTheme(themeName) {
+  const dot = document.getElementById('dot-cursor');
+  if (!dot) return;
+  const shape = CURSOR_SHAPES[themeName] || CURSOR_SHAPES.midnight;
+  dot.textContent = shape.char;
+  dot.style.fontSize = shape.size + 'px';
+  dot.style.color = getComputedStyle(document.body).getPropertyValue('--accent').trim() || '#3b82f6';
+  dot.style.background = 'none';
+  dot.style.width = 'auto';
+  dot.style.height = 'auto';
+  dot.style.textShadow = `0 0 10px currentColor, 0 0 20px currentColor`;
 }
 
 // ===== THEME =====
@@ -398,6 +443,12 @@ function applyTheme(name, persist = true) {
   document.querySelectorAll('.snake-body').forEach((el, i) => {
     el.style.background = `hsl(${(i * 14 + THEME_KEYS.indexOf(name) * 45) % 360}, 90%, 60%)`;
   });
+
+  // Update cursor shape
+  updateCursorForTheme(name);
+
+  // Trigger background canvas color update
+  if (window._particleNet) window._particleNet.setColor(t.accent);
 }
 
 function initTheme() {
@@ -463,16 +514,17 @@ function initSectionThemes() {
   const canvas = document.getElementById('particle-canvas');
   if (!canvas) return;
   const net = new ParticleNetwork(canvas);
+  window._particleNet = net; // expose globally for theme changes
   const colorMap = {
-    home: '#ff0000', about: '#ff6600', skills: '#ffd700',
-    projects: '#ff0044', contact: '#ff0000'
+    home: 'var(--accent)', about: 'var(--accent2)', skills: 'var(--accent)',
+    projects: 'var(--accent2)', contact: 'var(--accent)'
   };
   const sections = document.querySelectorAll('.section-theme');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
-        const theme = e.target.dataset.theme;
-        if (colorMap[theme]) net.setColor(colorMap[theme]);
+        const t = THEMES[document.body.getAttribute('data-theme')] || THEMES.midnight;
+        net.setColor(t.accent);
       }
     });
   }, { threshold: 0.3 });
@@ -648,6 +700,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const activeTheme = initTheme();   // random theme first
   initLoadingScreen(activeTheme);    // loader matches theme
   initDotCursor();
+  updateCursorForTheme(activeTheme); // cursor shape matches theme
   initModernMenu();
   initMobileMenu();
   initTypingEffect();
