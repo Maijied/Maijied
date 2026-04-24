@@ -856,6 +856,36 @@ document.getElementById('terminal-input')?.addEventListener('keydown', e => {
   }
 });
 
+// ===== ROAST ME (RaaS) =====
+window.getRoast = async (lang = 'en') => {
+  const txt = document.getElementById('roast-text');
+  if (!txt) return;
+  txt.textContent = '🔥 Loading fire...';
+  try {
+    if (window.RaaS) {
+      const r = await RaaS.getRandomRoast({ lang });
+      txt.textContent = r.text || 'You\'re so average, even your bugs are mediocre.';
+    } else {
+      // Fallback: fetch directly
+      const res = await fetch(`https://maijied.github.io/roast-as-a-service/api/${lang}/roasts-${lang}-1.json`);
+      const data = await res.json();
+      const roasts = data.roasts || data;
+      const pick = roasts[Math.floor(Math.random() * roasts.length)];
+      txt.textContent = pick.text || pick;
+    }
+  } catch {
+    txt.textContent = 'Your code is so bad even Stack Overflow gave up on you. 🔥';
+  }
+};
+
+document.getElementById('roast-btn')?.addEventListener('click', () => {
+  const bubble = document.getElementById('roast-bubble');
+  if (!bubble) return;
+  const isHidden = bubble.style.display === 'none' || !bubble.style.display;
+  bubble.style.display = isHidden ? 'block' : 'none';
+  if (isHidden) window.getRoast('en');
+});
+
 // ===== INIT ALL =====
 document.addEventListener('DOMContentLoaded', () => {
   const activeTheme = initTheme();   // random theme first
