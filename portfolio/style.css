@@ -1258,3 +1258,183 @@ body.light-theme .social-icon-btn img { filter: invert(1); }
   0%,100% { transform: scale(1); box-shadow: 0 4px 20px rgba(239,68,68,.5); }
   50% { transform: scale(1.1); box-shadow: 0 4px 32px rgba(249,115,22,.8); }
 }
+
+/* ===== SUPPORT / COFFEE SECTION ===== */
+.support-section { background: var(--bg2); }
+
+.coffee-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  background: linear-gradient(135deg, rgba(245,158,11,.08) 0%, rgba(10,12,20,.6) 60%);
+  border: 1px solid rgba(245,158,11,.25);
+  border-radius: 20px;
+  padding: 2.5rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.coffee-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 0% 50%, rgba(245,158,11,.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+.coffee-left { flex: 1; display: flex; flex-direction: column; gap: .75rem; }
+.coffee-emoji { font-size: 2.5rem; }
+.coffee-badge {
+  display: inline-flex; align-items: center; gap: .4rem;
+  font-family: 'Fira Code', monospace;
+  font-size: .7rem; letter-spacing: .15em;
+  color: #f59e0b;
+  border: 1px solid rgba(245,158,11,.35);
+  padding: .3rem .8rem; border-radius: 999px;
+  background: rgba(245,158,11,.08);
+  width: fit-content;
+}
+.coffee-title {
+  font-family: 'Oxanium', sans-serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.2;
+}
+.coffee-desc { font-size: .9rem; color: var(--text2); line-height: 1.7; max-width: 420px; }
+.coffee-quote { font-style: italic; color: #f59e0b; font-size: .85rem; opacity: .85; }
+
+.coffee-right { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; flex-shrink: 0; }
+.coffee-stats { display: flex; gap: 2rem; }
+.coffee-stat { display: flex; flex-direction: column; align-items: center; gap: .2rem; }
+.coffee-num {
+  font-family: 'Oxanium', sans-serif;
+  font-size: 1.8rem; font-weight: 900;
+  color: #f59e0b;
+}
+.coffee-label {
+  font-family: 'Fira Code', monospace;
+  font-size: .65rem; letter-spacing: .15em;
+  color: var(--text2);
+}
+.coffee-btn {
+  display: flex; align-items: center; gap: .6rem;
+  padding: .85rem 2rem;
+  background: #f59e0b;
+  color: #000;
+  font-weight: 800; font-size: .95rem;
+  border: none; border-radius: 12px;
+  cursor: none;
+  transition: transform .2s, box-shadow .2s;
+  box-shadow: 0 4px 24px rgba(245,158,11,.4);
+  white-space: nowrap;
+}
+.coffee-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(245,158,11,.6); }
+
+/* Support Modal */
+.support-modal {
+  margin-top: 2rem;
+  background: var(--glass-bg);
+  border: 1px solid rgba(245,158,11,.2);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  transition: all .3s;
+}
+.support-modal.hidden { display: none; }
+.support-modal-inner { padding: 2rem; display: flex; flex-direction: column; gap: 1.5rem; }
+.support-modal-close {
+  position: absolute; top: 1rem; right: 1rem;
+  background: rgba(255,255,255,.08); border: none;
+  color: var(--text2); width: 28px; height: 28px;
+  border-radius: 50%; cursor: none; font-size: .85rem;
+  transition: background .2s, color .2s;
+}
+.support-modal-close:hover { background: rgba(255,0,0,.2); color: #fff; }
+
+.support-block { display: flex; flex-direction: column; gap: .75rem; }
+.support-block-title {
+  font-family: 'Oxanium', sans-serif;
+  font-size: 1.1rem; font-weight: 700;
+  color: var(--text);
+}
+.support-block-sub { font-size: .88rem; color: var(--text2); line-height: 1.6; }
+.support-divider { height: 1px; background: rgba(255,255,255,.08); margin: .5rem 0; }
+
+/* bKash */
+.bkash-wrap { display: flex; flex-direction: column; align-items: center; gap: .75rem; }
+.bkash-qr {
+  width: 160px; height: 160px;
+  border-radius: 12px;
+  border: 3px solid #E2136E;
+  box-shadow: 0 0 20px rgba(226,19,110,.3);
+}
+.bkash-num {
+  display: flex; align-items: center; gap: .6rem;
+  font-size: .85rem; color: var(--text2);
+  flex-wrap: wrap; justify-content: center;
+}
+.bkash-num code {
+  background: rgba(226,19,110,.1);
+  border: 1px solid rgba(226,19,110,.3);
+  color: #f9a8d4; padding: .2rem .6rem;
+  border-radius: 6px; font-family: 'Fira Code', monospace;
+  font-size: .82rem;
+}
+.bkash-hint { font-size: .78rem; color: var(--text2); opacity: .7; text-align: center; font-style: italic; }
+
+/* Crypto table */
+.crypto-table-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid rgba(255,255,255,.08); }
+.crypto-table { width: 100%; border-collapse: collapse; font-size: .78rem; }
+.crypto-table th {
+  background: rgba(255,255,255,.05);
+  padding: .6rem 1rem;
+  text-align: left;
+  font-family: 'Fira Code', monospace;
+  font-size: .68rem; letter-spacing: .1em;
+  color: var(--text2);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.crypto-table td {
+  padding: .6rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  color: var(--text2);
+  vertical-align: middle;
+}
+.crypto-table tr:last-child td { border-bottom: none; }
+.crypto-table tr:hover td { background: rgba(245,158,11,.04); }
+.crypto-table code {
+  font-family: 'Fira Code', monospace;
+  font-size: .72rem;
+  color: #fbbf24;
+  word-break: break-all;
+}
+.copy-btn {
+  padding: .2rem .6rem;
+  background: rgba(245,158,11,.1);
+  border: 1px solid rgba(245,158,11,.3);
+  border-radius: 6px;
+  color: #f59e0b;
+  font-size: .7rem;
+  cursor: none;
+  white-space: nowrap;
+  transition: background .2s;
+  font-family: 'Fira Code', monospace;
+}
+.copy-btn:hover { background: rgba(245,158,11,.2); }
+.crypto-warning {
+  font-size: .75rem;
+  color: #f59e0b;
+  opacity: .7;
+  padding: .6rem .8rem;
+  background: rgba(245,158,11,.06);
+  border-left: 3px solid rgba(245,158,11,.4);
+  border-radius: 0 6px 6px 0;
+  font-family: 'Fira Code', monospace;
+}
+
+@media (max-width: 768px) {
+  .coffee-card { flex-direction: column; padding: 1.5rem; gap: 1.5rem; }
+  .coffee-right { width: 100%; }
+  .coffee-stats { justify-content: center; }
+  .coffee-btn { width: 100%; justify-content: center; }
+  .crypto-table td:nth-child(3) { max-width: 140px; overflow: hidden; text-overflow: ellipsis; }
+}

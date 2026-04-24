@@ -239,6 +239,97 @@
   </div>
 </section>
 
+<!-- SUPPORT / BUY ME A COFFEE -->
+<section id="support" class="section-theme support-section" data-theme="support">
+  <div class="section-inner">
+
+    <!-- Main coffee card -->
+    <div class="coffee-card">
+      <div class="coffee-left">
+        <div class="coffee-emoji">☕</div>
+        <div class="coffee-badge">☕ BUY ME A COFFEE</div>
+        <h2 class="coffee-title">Great ideas run on coffee.</h2>
+        <p class="coffee-desc">Every open-source project, guide, and README I write takes hours of focused effort. A coffee keeps the momentum alive.</p>
+        <p class="coffee-quote">"The best contributions happen when the creator has space to create freely."</p>
+      </div>
+      <div class="coffee-right">
+        <div class="coffee-stats">
+          <div class="coffee-stat"><span class="coffee-num">20+</span><span class="coffee-label">PROJECTS</span></div>
+          <div class="coffee-stat"><span class="coffee-num">25+</span><span class="coffee-label">READMES</span></div>
+          <div class="coffee-stat"><span class="coffee-num">1000+</span><span class="coffee-label">HOURS</span></div>
+        </div>
+        <button class="coffee-btn" id="coffee-btn-main">
+          ☕ Support My Work
+        </button>
+      </div>
+    </div>
+
+    <!-- Support modal trigger area -->
+    <div id="support-modal" class="support-modal hidden">
+      <div class="support-modal-inner">
+        <button class="support-modal-close" id="support-modal-close">✕</button>
+
+        <!-- bKash -->
+        <div class="support-block">
+          <h3 class="support-block-title">☕ Buy Me a Coffee — bKash</h3>
+          <p class="support-block-sub">Sending from Bangladesh? Support via <strong>bKash Send Money</strong>:</p>
+          <div class="bkash-wrap">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=01629158131&color=E2136E&bgcolor=ffffff" alt="bKash QR" class="bkash-qr"/>
+            <div class="bkash-num">
+              <span>📱 bKash Number:</span>
+              <code id="bkash-code">01629158131</code>
+              <button class="copy-btn" onclick="navigator.clipboard.writeText('01629158131');this.textContent='✓ Copied!';setTimeout(()=>this.textContent='Copy',1500)">Copy</button>
+            </div>
+            <p class="bkash-hint">Open bKash app → Send Money → Scan QR or enter number above</p>
+          </div>
+        </div>
+
+        <div class="support-divider"></div>
+
+        <!-- Crypto -->
+        <div class="support-block">
+          <h3 class="support-block-title">💛 Decentralized Support</h3>
+          <p class="support-block-sub">Support via USDT on any network below. No accounts, no middlemen — direct on-chain.</p>
+          <div class="crypto-table-wrap">
+            <table class="crypto-table">
+              <thead><tr><th>Network</th><th>Token</th><th>Address</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td>BNB Smart Chain (BEP20)</td><td>USDT</td>
+                  <td><code>0xfbaae60922e40bdcc82142ac6d6ff9c69bb12d26</code></td>
+                  <td><button class="copy-btn" onclick="navigator.clipboard.writeText('0xfbaae60922e40bdcc82142ac6d6ff9c69bb12d26');this.textContent='✓';setTimeout(()=>this.textContent='Copy',1500)">Copy</button></td>
+                </tr>
+                <tr>
+                  <td>Ethereum (ERC20)</td><td>USDT</td>
+                  <td><code>0xfbaae60922e40bdcc82142ac6d6ff9c69bb12d26</code></td>
+                  <td><button class="copy-btn" onclick="navigator.clipboard.writeText('0xfbaae60922e40bdcc82142ac6d6ff9c69bb12d26');this.textContent='✓';setTimeout(()=>this.textContent='Copy',1500)">Copy</button></td>
+                </tr>
+                <tr>
+                  <td>Solana</td><td>USDT</td>
+                  <td><code>HMbxpSyhS599xC9fVdMMtbnrbjBEvSP2ww2KXUoqwe7D</code></td>
+                  <td><button class="copy-btn" onclick="navigator.clipboard.writeText('HMbxpSyhS599xC9fVdMMtbnrbjBEvSP2ww2KXUoqwe7D');this.textContent='✓';setTimeout(()=>this.textContent='Copy',1500)">Copy</button></td>
+                </tr>
+                <tr>
+                  <td>Tron (TRC20)</td><td>USDT</td>
+                  <td><code>TNicohFHB9VYPSq2ksqRD73Ubhi9QVAVZm</code></td>
+                  <td><button class="copy-btn" onclick="navigator.clipboard.writeText('TNicohFHB9VYPSq2ksqRD73Ubhi9QVAVZm');this.textContent='✓';setTimeout(()=>this.textContent='Copy',1500)">Copy</button></td>
+                </tr>
+                <tr>
+                  <td>Aptos</td><td>USDT</td>
+                  <td><code>0xb9a6776cfce10ee3755ecaa39f8aeb5b4f1edaa0adaccf4c79260c63bce27e3d</code></td>
+                  <td><button class="copy-btn" onclick="navigator.clipboard.writeText('0xb9a6776cfce10ee3755ecaa39f8aeb5b4f1edaa0adaccf4c79260c63bce27e3d');this.textContent='✓';setTimeout(()=>this.textContent='Copy',1500)">Copy</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="crypto-warning">⚠️ Only send USDT to the matching network. Do not send NFTs or other tokens.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact" class="section-theme contact-section" data-theme="contact">
   <div class="section-inner">

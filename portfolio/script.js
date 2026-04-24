@@ -887,6 +887,15 @@ document.getElementById('roast-btn')?.addEventListener('click', () => {
   if (isHidden) window.getRoast('en');
 });
 
+// ===== SUPPORT MODAL =====
+function initSupportModal() {
+  const btn = document.getElementById('coffee-btn-main');
+  const modal = document.getElementById('support-modal');
+  const closeBtn = document.getElementById('support-modal-close');
+  btn?.addEventListener('click', () => modal?.classList.toggle('hidden'));
+  closeBtn?.addEventListener('click', () => modal?.classList.add('hidden'));
+}
+
 // ===== INIT ALL =====
 document.addEventListener('DOMContentLoaded', () => {
   const activeTheme = initTheme();   // random theme first
@@ -902,6 +911,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initRealSnake();
   initSectionThemes();
   initMusicSystem();
+  initSupportModal();
   initSmoothScroll();
   initFadeIn();
   initActiveNav();
