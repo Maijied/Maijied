@@ -375,8 +375,16 @@ function initSectionThemes() {
 
 
 // ===== MUSIC SYSTEM =====
-const MUSIC_FILES = ['music1.mp3', 'music2.mp3', 'music3.mp3', 'music4.mp3'];
-const MUSIC_BASE = '../';
+const MUSIC_FILES = [
+  'music/lake-marie-i-ian-aisling-main-version-27028-01-02.mp3',
+  'music/twinkle-twinkle-little-star-dan-barracuda-main-version-38365-01-19.mp3',
+  'music/your-touch-monument-music-main-version-44736-02-04.mp3'
+];
+const MUSIC_NAMES = [
+  'Lake Marie',
+  'Twinkle Twinkle',
+  'Your Touch'
+];
 let audio = null;
 let currentTrack = 0;
 let isPlaying = false;
@@ -405,8 +413,10 @@ function updateMusicUI() {
 function loadTrack(idx) {
   currentTrack = ((idx % MUSIC_FILES.length) + MUSIC_FILES.length) % MUSIC_FILES.length;
   if (!audio) { audio = new Audio(); audio.volume = 0.7; }
-  audio.src = MUSIC_BASE + MUSIC_FILES[currentTrack];
+  audio.src = MUSIC_FILES[currentTrack];
   audio.load();
+  const trackNameEl = document.getElementById('trackName');
+  if (trackNameEl) trackNameEl.textContent = MUSIC_NAMES[currentTrack] || MUSIC_FILES[currentTrack].split('/').pop().replace('.mp3','').replace(/[-_]/g,' ');
   updateMusicUI();
   if (isPlaying) audio.play().catch(() => {});
   audio.ontimeupdate = () => {
@@ -545,4 +555,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initFadeIn();
   initActiveNav();
 });
+
 
