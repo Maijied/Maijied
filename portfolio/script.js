@@ -291,64 +291,87 @@ function initDotCursor() {
 }
 
 // ===== THEME =====
-function initTheme() {
-  const btn = document.getElementById('theme-toggle');
+const THEMES = {
+  midnight:  { label: 'Midnight',  dark: true },
+  cyberpunk: { label: 'Cyberpunk', dark: true },
+  matrix:    { label: 'Matrix',    dark: true },
+  galaxy:    { label: 'Galaxy',    dark: true },
+  default:   { label: 'Default',   dark: false },
+  sakura:    { label: 'Sakura',    dark: false },
+  amber:     { label: 'Amber',     dark: false },
+  mint:      { label: 'Mint',      dark: false }
+};
+
+function applyTheme(name) {
+  const t = THEMES[name] || THEMES.midnight;
+  document.body.setAttribute('data-theme', name);
+  localStorage.setItem('theme', name);
+
+  const label = document.getElementById('theme-label');
+  if (label) label.textContent = t.label;
+
   const sun = document.getElementById('sun-icon');
   const moon = document.getElementById('moon-icon');
-  if (!btn) return;
-  const saved = localStorage.getItem('theme') || 'dark';
-  if (saved === 'light') {
-    document.body.classList.add('light-theme');
-    sun && sun.classList.remove('hidden');
-    moon && moon.classList.add('hidden');
-  }
-  btn.addEventListener('click', () => {
-    document.body.classList.toggle('light-theme');
-    const isLight = document.body.classList.contains('light-theme');
-    localStorage.setItem('theme', isLight ? 'light' : 'dark');
-    if (sun) sun.classList.toggle('hidden', !isLight);
-    if (moon) moon.classList.toggle('hidden', isLight);
+  if (sun) sun.classList.toggle('hidden', t.dark);
+  if (moon) moon.classList.toggle('hidden', !t.dark);
+
+  document.querySelectorAll('.theme-opt').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.theme === name);
   });
 }
 
-// ===== MODERN MENU (hide on scroll down) =====
-function initModernMenu() {
-  const nav = document.getElementById('main-nav');
-  if (!nav) return;
-  let lastY = 0;
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    if (y > lastY && y > 80) nav.classList.add('nav-hidden');
-    else nav.classList.remove('nav-hidden');
-    lastY = y;
-  }, { passive: true });
+function initTheme() {
+  const saved = localStorage.getItem('theme') || 'midnight';
+  applyTheme(saved);
 
+  // Theme picker toggle
+  const wrap = document.getElementById('theme-wrap');
+  const btn  = document.getElementById('theme-toggle');
+  const drop = document.getElementById('theme-dropdown');
+  const closeBtn = document.getElementById('theme-close');
+
+  btn?.addEventListener('click', e => {
+    e.stopPropagation();
+    wrap.classList.toggle('open');
+    drop.classList.toggle('hidden');
+  });
+  closeBtn?.addEventListener('click', e => {
+    e.stopPropagation();
+    wrap.classList.remove('open');
+    drop.classList.add('hidden');
+  });
+  document.addEventListener('click', e => {
+    if (!wrap?.contains(e.target)) {
+      wrap?.classList.remove('open');
+      drop?.classList.add('hidden');
+    }
+  });
+
+  document.querySelectorAll('.theme-opt').forEach(opt => {
+    opt.addEventListener('click', () => {
+      applyTheme(opt.dataset.theme);
+      wrap.classList.remove('open');
+      drop.classList.add('hidden');
+    });
+  });
+}
+
+// ===== MODERN MENU (always visible, no hide on scroll) =====
+function initModernMenu() {
   // Active pill link on scroll
   const links = document.querySelectorAll('.pill-link');
   const sections = document.querySelectorAll('section[id]');
-  const navH = 80;
   window.addEventListener('scroll', () => {
     let current = 'home';
     sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - navH - 10) current = s.id;
+      if (window.scrollY >= s.offsetTop - 90) current = s.id;
     });
-    links.forEach(l => {
-      l.classList.toggle('active', l.dataset.section === current);
-    });
+    links.forEach(l => l.classList.toggle('active', l.dataset.section === current));
   }, { passive: true });
-
-  // Theme label update
-  const themeLabel = document.getElementById('theme-label');
-  function updateLabel() {
-    if (themeLabel) themeLabel.textContent = document.body.classList.contains('light-theme') ? 'Light' : 'Midnight';
-  }
-  updateLabel();
-  document.getElementById('theme-toggle')?.addEventListener('click', () => setTimeout(updateLabel, 50));
 
   // Music pill button opens widget
   document.getElementById('pill-music-btn')?.addEventListener('click', () => {
-    const widget = document.getElementById('musicWidget');
-    if (widget) widget.classList.toggle('hidden');
+    document.getElementById('musicWidget')?.classList.toggle('hidden');
   });
 }
 

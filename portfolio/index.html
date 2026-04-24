@@ -33,13 +33,65 @@
 <nav id="main-nav">
   <div class="pill-nav">
 
-    <!-- Theme toggle -->
-    <button id="theme-toggle" class="pill-item pill-theme" title="Toggle theme">
-      <svg id="moon-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-      <svg id="sun-icon" class="hidden" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-      <span class="pill-theme-label" id="theme-label">Midnight</span>
-      <span class="pill-dot"></span>
-    </button>
+    <!-- Theme picker button -->
+    <div class="pill-theme-wrap" id="theme-wrap">
+      <button id="theme-toggle" class="pill-item pill-theme" title="Change theme">
+        <svg id="moon-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg id="sun-icon" class="hidden" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <span class="pill-theme-label" id="theme-label">Midnight</span>
+        <svg class="pill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+
+      <!-- Theme dropdown -->
+      <div class="theme-dropdown hidden" id="theme-dropdown">
+        <div class="theme-dropdown-header">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <span>Appearance</span>
+          <small>8 themes available</small>
+          <button class="theme-close" id="theme-close">✕</button>
+        </div>
+
+        <div class="theme-group-label">LIGHT</div>
+        <div class="theme-grid">
+          <button class="theme-opt" data-theme="default">
+            <span class="theme-dots"><i style="background:#3b82f6"></i><i style="background:#6366f1"></i><i style="background:#8b5cf6"></i></span>
+            Default
+          </button>
+          <button class="theme-opt" data-theme="sakura">
+            <span class="theme-dots"><i style="background:#f43f5e"></i><i style="background:#ec4899"></i><i style="background:#a855f7"></i></span>
+            Sakura
+          </button>
+          <button class="theme-opt" data-theme="amber">
+            <span class="theme-dots"><i style="background:#f59e0b"></i><i style="background:#ef4444"></i><i style="background:#f97316"></i></span>
+            Amber
+          </button>
+          <button class="theme-opt" data-theme="mint">
+            <span class="theme-dots"><i style="background:#10b981"></i><i style="background:#06b6d4"></i><i style="background:#3b82f6"></i></span>
+            Mint
+          </button>
+        </div>
+
+        <div class="theme-group-label">DARK</div>
+        <div class="theme-grid">
+          <button class="theme-opt active" data-theme="midnight">
+            <span class="theme-dots"><i style="background:#3b82f6"></i><i style="background:#6366f1"></i><i style="background:#8b5cf6"></i></span>
+            Midnight
+          </button>
+          <button class="theme-opt" data-theme="cyberpunk">
+            <span class="theme-dots"><i style="background:#facc15"></i><i style="background:#f43f5e"></i><i style="background:#a855f7"></i></span>
+            Cyberpunk
+          </button>
+          <button class="theme-opt" data-theme="matrix">
+            <span class="theme-dots"><i style="background:#22c55e"></i><i style="background:#16a34a"></i><i style="background:#15803d"></i></span>
+            Matrix
+          </button>
+          <button class="theme-opt" data-theme="galaxy">
+            <span class="theme-dots"><i style="background:#a855f7"></i><i style="background:#ec4899"></i><i style="background:#6366f1"></i></span>
+            Galaxy
+          </button>
+        </div>
+      </div>
+    </div>
 
     <div class="pill-divider"></div>
 
@@ -69,14 +121,14 @@
 
     <!-- Music button -->
     <button class="pill-item pill-music" id="pill-music-btn" title="Music">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
       Music
       <svg class="pill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
     </button>
 
   </div>
 
-  <!-- Mobile hamburger (small screens only) -->
+  <!-- Mobile hamburger -->
   <button id="mobile-menu-btn" class="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
