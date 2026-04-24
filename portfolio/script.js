@@ -251,22 +251,92 @@ function initRealSnake() {
 }
 
 
-// ===== LOADING SCREEN =====
-function initLoadingScreen() {
+// ===== LOADING SCREEN — unique loader per theme per reload =====
+function initLoadingScreen(themeName) {
   const screen = document.getElementById('loading-screen');
   const container = document.getElementById('loader-container');
+  const textEl = screen?.querySelector('.loader-text');
   if (!screen || !container) return;
-  const types = [
-    '<div class="loader-ring"></div>',
-    '<div class="loader-pulse"></div>',
-    '<div class="loader-bar-wrap"><div class="loader-bar"></div></div>',
-    '<div class="loader-dots"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div>'
-  ];
-  container.innerHTML = types[Math.floor(Math.random() * types.length)];
-  const delay = 2000 + Math.random() * 1000;
+
+  // Each theme has its own loader style + message
+  const loaderMap = {
+    midnight: {
+      html: `<div class="loader-ring"></div>`,
+      msg: 'BOOTING SYSTEM...'
+    },
+    cyberpunk: {
+      html: `<div class="loader-cyber">
+        <div class="cyber-line"></div><div class="cyber-line"></div><div class="cyber-line"></div>
+        <div class="cyber-glitch">MAIZIED</div>
+      </div>`,
+      msg: 'JACKING IN...'
+    },
+    matrix: {
+      html: `<canvas id="matrix-canvas" width="200" height="80"></canvas>`,
+      msg: 'ENTERING THE MATRIX...'
+    },
+    galaxy: {
+      html: `<div class="loader-galaxy">
+        <div class="galaxy-ring r1"></div>
+        <div class="galaxy-ring r2"></div>
+        <div class="galaxy-ring r3"></div>
+        <div class="galaxy-core"></div>
+      </div>`,
+      msg: 'WARPING SPACE...'
+    },
+    default: {
+      html: `<div class="loader-dots"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div>`,
+      msg: 'LOADING...'
+    },
+    sakura: {
+      html: `<div class="loader-sakura">
+        ${Array.from({length:6},(_,i)=>`<div class="petal" style="--i:${i}">🌸</div>`).join('')}
+      </div>`,
+      msg: '花が咲く...'
+    },
+    amber: {
+      html: `<div class="loader-fire">
+        <div class="flame f1"></div><div class="flame f2"></div><div class="flame f3"></div>
+      </div>`,
+      msg: 'IGNITING...'
+    },
+    mint: {
+      html: `<div class="loader-wave-wrap">
+        ${Array.from({length:5},(_,i)=>`<div class="wave-bar" style="--i:${i}"></div>`).join('')}
+      </div>`,
+      msg: 'REFRESHING...'
+    }
+  };
+
+  const cfg = loaderMap[themeName] || loaderMap.midnight;
+  container.innerHTML = cfg.html;
+  if (textEl) textEl.textContent = cfg.msg;
+
+  // Matrix rain effect
+  if (themeName === 'matrix') {
+    const c = document.getElementById('matrix-canvas');
+    if (c) {
+      const ctx = c.getContext('2d');
+      const cols = Math.floor(c.width / 14);
+      const drops = Array(cols).fill(0);
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%';
+      setInterval(() => {
+        ctx.fillStyle = 'rgba(0,10,0,0.15)';
+        ctx.fillRect(0,0,c.width,c.height);
+        ctx.fillStyle = '#22c55e';
+        ctx.font = '12px monospace';
+        drops.forEach((y,i) => {
+          ctx.fillText(chars[Math.floor(Math.random()*chars.length)], i*14, y*14);
+          drops[i] = y > c.height/14 && Math.random() > 0.95 ? 0 : y+1;
+        });
+      }, 50);
+    }
+  }
+
+  const delay = 2200 + Math.random() * 800;
   setTimeout(() => {
-    screen.classList.add('hidden');
-    setTimeout(() => { screen.style.display = 'none'; }, 600);
+    screen.style.opacity = '0';
+    setTimeout(() => { screen.style.display = 'none'; }, 500);
   }, delay);
 }
 
@@ -292,20 +362,21 @@ function initDotCursor() {
 
 // ===== THEME =====
 const THEMES = {
-  midnight:  { label: 'Midnight',  dark: true },
-  cyberpunk: { label: 'Cyberpunk', dark: true },
-  matrix:    { label: 'Matrix',    dark: true },
-  galaxy:    { label: 'Galaxy',    dark: true },
-  default:   { label: 'Default',   dark: false },
-  sakura:    { label: 'Sakura',    dark: false },
-  amber:     { label: 'Amber',     dark: false },
-  mint:      { label: 'Mint',      dark: false }
+  midnight:  { label: 'Midnight',  dark: true,  accent: '#3b82f6' },
+  cyberpunk: { label: 'Cyberpunk', dark: true,  accent: '#facc15' },
+  matrix:    { label: 'Matrix',    dark: true,  accent: '#22c55e' },
+  galaxy:    { label: 'Galaxy',    dark: true,  accent: '#a855f7' },
+  default:   { label: 'Default',   dark: false, accent: '#3b82f6' },
+  sakura:    { label: 'Sakura',    dark: false, accent: '#f43f5e' },
+  amber:     { label: 'Amber',     dark: false, accent: '#f59e0b' },
+  mint:      { label: 'Mint',      dark: false, accent: '#10b981' }
 };
+const THEME_KEYS = Object.keys(THEMES);
 
-function applyTheme(name) {
+function applyTheme(name, persist = true) {
   const t = THEMES[name] || THEMES.midnight;
   document.body.setAttribute('data-theme', name);
-  localStorage.setItem('theme', name);
+  if (persist) localStorage.setItem('theme', name);
 
   const label = document.getElementById('theme-label');
   if (label) label.textContent = t.label;
@@ -318,11 +389,21 @@ function applyTheme(name) {
   document.querySelectorAll('.theme-opt').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.theme === name);
   });
+
+  // Update dragon/snake colors to match accent
+  document.querySelectorAll('.dragon-segment').forEach(el => {
+    el.style.background = t.accent;
+    el.style.boxShadow = `0 0 8px ${t.accent}88`;
+  });
+  document.querySelectorAll('.snake-body').forEach((el, i) => {
+    el.style.background = `hsl(${(i * 14 + THEME_KEYS.indexOf(name) * 45) % 360}, 90%, 60%)`;
+  });
 }
 
 function initTheme() {
-  const saved = localStorage.getItem('theme') || 'midnight';
-  applyTheme(saved);
+  // Random theme on every reload — ignore localStorage
+  const randomTheme = THEME_KEYS[Math.floor(Math.random() * THEME_KEYS.length)];
+  applyTheme(randomTheme, false);
 
   // Theme picker toggle
   const wrap = document.getElementById('theme-wrap');
@@ -354,6 +435,8 @@ function initTheme() {
       drop.classList.add('hidden');
     });
   });
+
+  return randomTheme;
 }
 
 // ===== MODERN MENU (always visible, no hide on scroll) =====
@@ -562,9 +645,9 @@ function initActiveNav() {
 
 // ===== INIT ALL =====
 document.addEventListener('DOMContentLoaded', () => {
-  initLoadingScreen();
+  const activeTheme = initTheme();   // random theme first
+  initLoadingScreen(activeTheme);    // loader matches theme
   initDotCursor();
-  initTheme();
   initModernMenu();
   initMobileMenu();
   initTypingEffect();
