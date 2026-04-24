@@ -1,19 +1,7 @@
 <!-- HEADER BANNER -->
 <div align="center">
 
-```
-╔══════════════════════════════════════════════════════════════════════╗
-║  ███╗   ███╗ █████╗ ██╗███████╗██╗███████╗██████╗                   ║
-║  ████╗ ████║██╔══██╗██║╚══███╔╝██║██╔════╝██╔══██╗                  ║
-║  ██╔████╔██║███████║██║  ███╔╝ ██║█████╗  ██║  ██║                  ║
-║  ██║╚██╔╝██║██╔══██║██║ ███╔╝  ██║██╔══╝  ██║  ██║                  ║
-║  ██║ ╚═╝ ██║██║  ██║██║███████╗██║███████╗██████╔╝                  ║
-║  ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝╚══════╝╚═╝╚══════╝╚═════╝                   ║
-║                                                                      ║
-║         [ SYSTEM ONLINE ] — MOHAMMAD MAIZIED HASAN MAJUMDER         ║
-║         Senior Software Engineer · Shohoz · Dhaka, Bangladesh       ║
-╚══════════════════════════════════════════════════════════════════════╝
-```
+<img src="header.svg" alt="Maizied Header" width="100%"/>
 
 <img src="https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&size=18&duration=3000&pause=1000&color=00F5FF&center=true&vCenter=true&width=600&lines=Analytical+%26+Detail-Oriented+Developer;Full-Stack+%7C+Mobile+%7C+Game+Dev+%7C+IoT;Building+the+future%2C+one+commit+at+a+time;Currently+%40+Shohoz+%E2%80%94+Dhaka%2C+Bangladesh" alt="Typing SVG" />
 
