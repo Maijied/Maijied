@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"/>
+  <title>Maizied — Full Stack Software Engineer</title>
+  <link rel="icon" type="image/jpeg" href="../avatar.jpg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Fira+Code:wght@300..700&family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Loading Screen -->
+<div id="loading-screen">
+  <div class="loader-content">
+    <div id="loader-container"></div>
+    <div class="loader-text">INITIALIZING...</div>
+  </div>
+</div>
+
+<!-- Dot Cursor -->
+<div id="dot-cursor"></div>
+
+<!-- Particle Canvas -->
+<canvas id="particle-canvas" style="position:fixed;inset:0;z-index:0;pointer-events:none;"></canvas>
+
+<!-- CSS Dragon -->
+<div id="css-dragon"></div>
+
+<!-- Navigation -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <div id="brand-container-wrapper">
+      <span id="sticky-name" class="brand-name">MAIZIED</span>
+    </div>
+    <div class="nav-links">
+      <a href="#about" class="menu-link">About</a>
+      <a href="#skills" class="menu-link">Skills</a>
+      <a href="#projects" class="menu-link">Projects</a>
+      <a href="#contact" class="menu-link">Contact</a>
+    </div>
+    <div class="nav-right">
+      <button id="theme-toggle" class="theme-btn" title="Toggle theme">
+        <svg id="sun-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <button id="mobile-menu-btn" class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu">
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#projects" class="mobile-link">Projects</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="section-theme hero-section" data-theme="home">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="avatar-wrap">
+        <div id="real-snake-container" class="snake-container"></div>
+        <img src="../avatar.jpg" alt="Maizied" class="avatar-img"/>
+        <div class="avatar-ring"></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-badge">AVAILABLE FOR WORK</div>
+      <h1 class="hero-name">Mohammad Maizied<br/><span class="red-gold-gradient">Hasan Majumder</span></h1>
+      <p class="hero-tagline">Full Stack Software Engineer crafting bold, modern apps with sharp logic, clean code, and next-gen tech.</p>
+      <p class="hero-typing">I specialize in <span id="typing-skill" class="red-gold-gradient"></span></p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary">View My Work</a>
+        <a href="#contact" class="btn-secondary">Contact Me</a>
+      </div>
+      <div id="social-container" class="social-row">
+        <a href="https://github.com/Maijied" target="_blank" class="social-icon-btn" title="GitHub">
+          <img src="https://cdn.simpleicons.org/github/ffffff" width="28" height="28" alt="GitHub"/>
+        </a>
+        <a href="https://www.linkedin.com/in/maizied/" target="_blank" class="social-icon-btn" title="LinkedIn">
+          <img src="https://cdn.simpleicons.org/linkedin/ffffff" width="28" height="28" alt="LinkedIn"/>
+        </a>
+        <a href="https://t.me/maizied" target="_blank" class="social-icon-btn" title="Telegram">
+          <img src="https://cdn.simpleicons.org/telegram/ffffff" width="28" height="28" alt="Telegram"/>
+        </a>
+        <a href="mailto:mdshvo40@gmail.com" class="social-icon-btn" title="Email">
+          <img src="https://cdn.simpleicons.org/gmail/ffffff" width="28" height="28" alt="Email"/>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-quote">
+    <span class="quote-mark">"</span>Code is the language of tomorrow. Every line I write helps shape what comes next.<span class="quote-mark">"</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section-theme about-section" data-theme="about">
+  <div class="section-inner">
+    <div class="section-label">ABOUT ME</div>
+    <h2 class="section-title">Who I Am</h2>
+    <div class="about-grid">
+      <div class="about-img-col">
+        <img src="../avatar.jpg" alt="Maizied" class="about-img"/>
+        <div class="about-stats">
+          <div class="stat-item"><span class="stat-num red-gold-gradient">6+</span><span class="stat-label">Years Exp.</span></div>
+          <div class="stat-item"><span class="stat-num red-gold-gradient">20+</span><span class="stat-label">Projects</span></div>
+          <div class="stat-item"><span class="stat-num red-gold-gradient">100%</span><span class="stat-label">Self-Taught</span></div>
+        </div>
+      </div>
+      <div class="about-text-col">
+        <p class="about-bio">Full Stack Software Engineer building premium digital products with performance, precision, and modern technology at the core. Blending engineering depth, product vision, and clean execution to create experiences that are sharp, scalable, and built to last.</p>
+        <div class="about-details">
+          <div class="detail-row"><span class="detail-label">FULL NAME</span><span class="detail-val">Mohammad Maizied Hasan Majumder</span></div>
+          <div class="detail-row"><span class="detail-label">HANDLE</span><span class="detail-val">@Maijied</span></div>
+          <div class="detail-row"><span class="detail-label">GITHUB</span><a href="https://github.com/Maijied" target="_blank" class="detail-link">github.com/Maijied</a></div>
+          <div class="detail-row"><span class="detail-label">BASED IN</span><span class="detail-val">Dhaka, Bangladesh</span></div>
+          <div class="detail-row"><span class="detail-label">ROLE</span><span class="detail-val">Senior Software Engineer @ Shohoz</span></div>
+          <div class="detail-row"><span class="detail-label">EMAIL</span><a href="mailto:mdshvo40@gmail.com" class="detail-link">mdshvo40@gmail.com</a></div>
+        </div>
+        <div class="about-cta-row">
+          <a href="https://github.com/Maijied" target="_blank" class="btn-primary">GitHub Profile</a>
+          <a href="https://www.linkedin.com/in/maizied/" target="_blank" class="btn-secondary">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section-theme skills-section" data-theme="skills">
+  <div class="section-inner">
+    <div class="section-label">WHAT I DO</div>
+    <h2 class="section-title">Skills &amp; Expertise</h2>
+    <p class="section-sub">I focus on building full-stack digital products with clean architecture, modern tooling, and real-world impact.</p>
+    <div class="skills-grid" id="skills-grid"></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section-theme projects-section" data-theme="projects">
+  <div class="section-inner">
+    <div class="section-label">MY WORK</div>
+    <h2 class="section-title">Projects</h2>
+    <p class="section-sub">Not just apps — real tools that solve real problems. From media players and AI agents to Laravel packages and browser extensions.</p>
+    <div class="projects-grid" id="projects-grid"></div>
+    <div style="text-align:center;margin-top:2.5rem;">
+      <a href="https://github.com/Maijied?tab=repositories" target="_blank" class="btn-primary">View All Repos on GitHub</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section-theme contact-section" data-theme="contact">
+  <div class="section-inner">
+    <div class="section-label">GET IN TOUCH</div>
+    <h2 class="section-title">Contact Me</h2>
+    <p class="section-sub">Available for select projects, technical collaborations, and meaningful open-source initiatives. Let's build something that matters.</p>
+    <div class="contact-card glass">
+      <img src="../avatar.jpg" alt="Maizied" class="contact-avatar"/>
+      <h3 class="contact-name">Mohammad Maizied Hasan Majumder</h3>
+      <p class="contact-handle">@Maijied</p>
+      <div class="contact-tags">
+        <span class="tag">Full Stack</span>
+        <span class="tag">Laravel</span>
+        <span class="tag">React</span>
+        <span class="tag">Mobile</span>
+        <span class="tag">Open Source</span>
+      </div>
+      <div class="contact-links">
+        <a href="https://t.me/maizied" target="_blank" class="btn-primary">Message on Telegram</a>
+        <a href="https://github.com/Maijied" target="_blank" class="btn-secondary">GitHub</a>
+        <a href="https://www.linkedin.com/in/maizied/" target="_blank" class="btn-secondary">LinkedIn</a>
+        <a href="mailto:mdshvo40@gmail.com" class="btn-secondary">Email</a>
+      </div>
+      <p class="contact-note">Usually responds within a few hours</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span class="footer-brand red-gold-gradient">MAIZIED</span>
+    <div class="footer-links">
+      <a href="https://github.com/Maijied" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/maizied/" target="_blank">LinkedIn</a>
+      <a href="https://t.me/maizied" target="_blank">Telegram</a>
+    </div>
+    <span class="footer-copy">V1.0 · CRAFTED WITH PRECISION</span>
+  </div>
+</footer>
+
+<!-- Toast -->
+<div id="toast" style="position:fixed;bottom:2rem;left:50%;transform:translate(-50%,20px);background:#1a1a1a;color:#fff;padding:.75rem 1.5rem;border-radius:999px;font-size:.85rem;opacity:0;transition:all .3s;z-index:9999;border:1px solid rgba(255,0,0,.3);">Copied!</div>
+
+<!-- Music Float Button -->
+<button id="musicFloatBtn" class="music-float-btn" style="display:none;" title="Music">
+  <div class="music-pulse-ring"></div>
+  <svg class="music-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg>
+</button>
+
+<!-- Music Widget -->
+<div id="musicWidget" class="music-widget hidden">
+  <div class="music-widget-header">
+    <span class="music-widget-title">NOW PLAYING</span>
+    <button id="closeMusicWidget" class="music-close-btn">✕</button>
+  </div>
+  <div class="music-disc-container">
+    <div class="music-disc">
+      <div class="music-disc-inner">
+        <svg class="music-disc-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg>
+      </div>
+    </div>
+    <div class="music-disc-shine"></div>
+  </div>
+  <div class="music-track-info">
+    <div class="music-track-name" id="trackName">Loading...</div>
+    <div class="music-track-time">
+      <span id="currentTime">0:00</span>
+      <span class="music-time-sep">/</span>
+      <span id="totalTime">0:00</span>
+      <span class="music-remaining" id="remainingTime">-0:00</span>
+    </div>
+  </div>
+  <div class="music-progress-container">
+    <div class="music-progress-bar">
+      <div class="music-progress-fill" id="progressFill"></div>
+      <input type="range" class="music-progress-slider" id="progressSlider" min="0" max="100" value="0"/>
+    </div>
+  </div>
+  <div class="music-controls">
+    <button class="music-control-btn" id="prevBtn">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"/></svg>
+    </button>
+    <button class="music-control-btn music-play-btn" id="playPauseBtn">
+      <svg class="play-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      <svg class="pause-icon hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+    </button>
+    <button class="music-control-btn" id="nextBtn">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+  <div class="music-extra-controls">
+    <div class="music-volume-container">
+      <button class="music-volume-btn" id="volumeBtn">
+        <svg class="volume-high" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072M12 6v12m-3.536-9.536a5 5 0 000 7.072M5 12H3"/></svg>
+        <svg class="volume-low hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5L6 9H2v6h4l5 4V5z"/></svg>
+        <svg class="volume-mute hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"/></svg>
+      </button>
+      <div class="music-volume-slider-container">
+        <input type="range" class="music-volume-slider" id="volumeSlider" min="0" max="100" value="70"/>
+        <span class="music-volume-value" id="volumeValue">70%</span>
+      </div>
+    </div>
+    <div class="music-equalizer">
+      <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
