@@ -31,9 +31,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Copy avatar into portfolio folder
-        run: |
-          cp avatar.jpg portfolio/avatar.jpg
-          cp bkash.jpg portfolio/bkash.jpg
+        run: cp avatar.jpg portfolio/avatar.jpg
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
