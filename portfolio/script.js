@@ -97,7 +97,8 @@ function initSkills() {
     { name: 'Node.js', pct: 76, icon: '🟢' },
     { name: 'LLM / AI', pct: 90, icon: '🤖' },
     { name: 'Android', pct: 72, icon: '📱' },
-    { name: 'C#/.NET', pct: 68, icon: '🔷' }
+    { name: 'C#/.NET', pct: 68, icon: '🔷' },
+    { name: 'DevOps', pct: 50, icon: '⚙️' }
   ];
   grid.innerHTML = skills.map(s => {
     const level = s.pct >= 80 ? 'ADVANCED' : 'INTERMEDIATE';
