@@ -695,6 +695,167 @@ function initActiveNav() {
   sections.forEach(s => obs.observe(s));
 }
 
+// ===== FUNNY FEATURES =====
+
+// 1. Konami Code (↑↑↓↓←→←→BA)
+let konamiSeq = [];
+const KONAMI = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+document.addEventListener('keydown', e => {
+  konamiSeq.push(e.key);
+  if (konamiSeq.length > 10) konamiSeq.shift();
+  if (konamiSeq.join(',') === KONAMI.join(',')) {
+    document.getElementById('konami-overlay').style.display = 'flex';
+    konamiSeq = [];
+  }
+});
+
+// 2. Rage Click Counter
+let clickCount = 0, clickTimer;
+document.addEventListener('click', e => {
+  if (e.target.closest('a, button, input, select, textarea')) return;
+  clickCount++;
+  clearTimeout(clickTimer);
+  if (clickCount >= 5) {
+    const msgs = [
+      '🤨 Calm down! The site isn\'t broken.',
+      '😅 Clicking won\'t make it load faster...',
+      '🎮 Found the secret click game? You win nothing!',
+      '🐛 Error 418: I\'m a teapot. Stop clicking.',
+      '🚀 Launching missiles... JK, just hire me instead.'
+    ];
+    const toast = document.getElementById('rage-toast');
+    const msg = document.getElementById('rage-msg');
+    if (toast && msg) {
+      msg.textContent = msgs[Math.floor(Math.random() * msgs.length)];
+      toast.style.display = 'block';
+      setTimeout(() => toast.style.display = 'none', 3500);
+    }
+    clickCount = 0;
+  }
+  clickTimer = setTimeout(() => clickCount = 0, 800);
+});
+
+// 3. Hire Me Button That Runs Away
+const hireBtns = document.querySelectorAll('a[href*="contact"]');
+hireBtns.forEach(btn => {
+  let dodgeCount = 0;
+  btn.addEventListener('mouseenter', e => {
+    if (dodgeCount < 3 && Math.random() > 0.7) {
+      const x = Math.random() * 100 - 50;
+      const y = Math.random() * 100 - 50;
+      btn.style.transform = `translate(${x}px, ${y}px)`;
+      dodgeCount++;
+      setTimeout(() => btn.style.transform = '', 600);
+    }
+  });
+});
+
+// 4. Fake Terminal (press `)
+const EXCUSES = [
+  'It works on my machine 🤷',
+  'Must be a caching issue',
+  'It was working yesterday',
+  'Did you try turning it off and on?',
+  'That\'s a feature, not a bug',
+  'It\'s a known issue',
+  'I can\'t reproduce it',
+  'Works fine in production',
+  'The client changed requirements',
+  'It\'s a browser compatibility thing',
+  'Probably a race condition',
+  'The API is down',
+  'Mercury is in retrograde',
+  'I forgot to push that fix',
+  'It\'s on my TODO list'
+];
+
+window.nextExcuse = () => {
+  const txt = document.getElementById('excuse-text');
+  const num = document.getElementById('excuse-num');
+  if (txt) txt.textContent = EXCUSES[Math.floor(Math.random() * EXCUSES.length)];
+  if (num) num.textContent = Math.floor(Math.random() * 999) + 1;
+};
+
+document.getElementById('excuse-btn')?.addEventListener('click', () => {
+  const popup = document.getElementById('excuse-popup');
+  if (popup) {
+    const isHidden = popup.style.display === 'none' || !popup.style.display;
+    popup.style.display = isHidden ? 'block' : 'none';
+    if (isHidden) window.nextExcuse();
+  }
+});
+
+document.addEventListener('click', e => {
+  const popup = document.getElementById('excuse-popup');
+  const btn = document.getElementById('excuse-btn');
+  if (popup && btn && !popup.contains(e.target) && e.target !== btn) {
+    popup.style.display = 'none';
+  }
+});
+
+// 5. Fake Terminal
+const termCmds = {
+  help: 'Available commands: about, skills, hire, sudo, whoami, clear, exit',
+  about: 'Mohammad Maizied Hasan Majumder\nFull Stack Software Engineer\n6+ years experience\nDhaka, Bangladesh',
+  skills: 'PHP/Laravel 88% | JavaScript 85% | LLM/AI 90%\nHTML/CSS 90% | React 78% | Node.js 76%',
+  hire: 'Initiating hire sequence...\n✓ Resume sent\n✓ Portfolio reviewed\n✓ Awaiting your response\n→ Contact: mdshvo40@gmail.com',
+  sudo: 'Permission granted. You are now admin.\nJust kidding. Nice try though 😎',
+  whoami: 'You are: A person with excellent taste in portfolios',
+  ls: 'projects/  skills/  experience/  coffee.exe',
+  pwd: '/home/maizied/portfolio',
+  clear: '__CLEAR__',
+  exit: '__EXIT__'
+};
+
+document.addEventListener('keydown', e => {
+  if (e.key === '`') {
+    e.preventDefault();
+    const term = document.getElementById('fake-terminal');
+    if (term) {
+      const isHidden = term.style.display === 'none' || !term.style.display;
+      term.style.display = isHidden ? 'block' : 'none';
+      if (isHidden) document.getElementById('terminal-input')?.focus();
+    }
+  }
+  if (e.key === 'Escape') {
+    document.getElementById('fake-terminal').style.display = 'none';
+  }
+});
+
+document.getElementById('terminal-input')?.addEventListener('keydown', e => {
+  if (e.key === 'Enter') {
+    const input = e.target;
+    const cmd = input.value.trim().toLowerCase();
+    const output = document.getElementById('terminal-output');
+    if (!output) return;
+
+    const line = document.createElement('div');
+    line.innerHTML = `<span style="color:#666">$ ${input.value}</span>`;
+    output.appendChild(line);
+
+    if (cmd === '__CLEAR__' || termCmds[cmd] === '__CLEAR__') {
+      output.innerHTML = '';
+    } else if (cmd === '__EXIT__' || termCmds[cmd] === '__EXIT__') {
+      document.getElementById('fake-terminal').style.display = 'none';
+      output.innerHTML = '';
+    } else if (termCmds[cmd]) {
+      const resp = document.createElement('div');
+      resp.style.color = '#22c55e';
+      resp.style.whiteSpace = 'pre-wrap';
+      resp.textContent = termCmds[cmd];
+      output.appendChild(resp);
+    } else {
+      const err = document.createElement('div');
+      err.style.color = '#ef4444';
+      err.textContent = `Command not found: ${cmd}. Type 'help' for available commands.`;
+      output.appendChild(err);
+    }
+
+    input.value = '';
+    output.scrollTop = output.scrollHeight;
+  }
+});
+
 // ===== INIT ALL =====
 document.addEventListener('DOMContentLoaded', () => {
   const activeTheme = initTheme();   // random theme first

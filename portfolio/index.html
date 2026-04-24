@@ -276,7 +276,7 @@
       <a href="https://www.linkedin.com/in/maizied/" target="_blank">LinkedIn</a>
       <a href="https://t.me/maizied" target="_blank">Telegram</a>
     </div>
-    <span class="footer-copy">V1.0 Â· CRAFTED WITH PRECISION</span>
+    <span class="footer-copy">V1.0 · CRAFTED WITH PRECISION</span>
   </div>
 </footer>
 
@@ -345,6 +345,46 @@
     <div class="music-equalizer">
       <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
     </div>
+  </div>
+</div>
+
+<!-- ===== FUNNY FEATURES ===== -->
+
+<!-- 1. Konami Code overlay -->
+<div id="konami-overlay" style="display:none;position:fixed;inset:0;z-index:99990;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;flex-direction:column;gap:1.5rem;">
+  <div style="font-size:4rem;animation:spin 1s linear infinite">🐉</div>
+  <div style="font-family:'Oxanium',monospace;font-size:2rem;font-weight:900;background:linear-gradient(90deg,#ff0000,#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">CHEAT CODE ACTIVATED</div>
+  <div style="font-family:'Fira Code',monospace;color:#22c55e;font-size:.9rem;letter-spacing:.1em;">sudo hire maizied --salary=dream --remote=true</div>
+  <div style="font-size:1.5rem;color:rgba(255,255,255,.6);font-family:'Fira Code',monospace;">You found the secret! 🎉</div>
+  <button onclick="document.getElementById('konami-overlay').style.display='none'" style="margin-top:1rem;padding:.6rem 1.5rem;background:linear-gradient(135deg,#ff0000,#ffd700);border:none;border-radius:999px;font-weight:700;cursor:pointer;color:#000;">Close Portal</button>
+</div>
+
+<!-- 2. Rage click counter toast -->
+<div id="rage-toast" style="display:none;position:fixed;bottom:6rem;left:50%;transform:translateX(-50%);background:#1a1a1a;border:1px solid var(--accent,#ff0000);border-radius:12px;padding:1rem 1.5rem;z-index:9995;text-align:center;min-width:280px;">
+  <div id="rage-msg" style="font-family:'Fira Code',monospace;font-size:.85rem;color:#fff;"></div>
+</div>
+
+<!-- 3. Dev Excuses widget -->
+<button id="excuse-btn" title="Dev Excuse" style="position:fixed;bottom:5.5rem;right:5rem;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#a855f7);border:none;cursor:pointer;z-index:900;font-size:1.2rem;box-shadow:0 4px 20px rgba(99,102,241,.4);transition:transform .2s;" title="Get a dev excuse">🤔</button>
+<div id="excuse-popup" style="display:none;position:fixed;bottom:10.5rem;right:4rem;width:260px;background:rgba(13,13,13,.97);border:1px solid rgba(99,102,241,.4);border-radius:16px;padding:1.2rem;z-index:901;font-family:'Fira Code',monospace;font-size:.78rem;color:#c4b5fd;line-height:1.6;box-shadow:0 20px 60px rgba(0,0,0,.6);">
+  <div style="font-size:.65rem;letter-spacing:.15em;color:#6366f1;margin-bottom:.5rem;">DEV EXCUSE #<span id="excuse-num">1</span></div>
+  <div id="excuse-text"></div>
+  <button onclick="window.nextExcuse()" style="margin-top:.75rem;width:100%;padding:.4rem;background:rgba(99,102,241,.2);border:1px solid rgba(99,102,241,.3);border-radius:8px;color:#a5b4fc;font-size:.72rem;cursor:pointer;font-family:'Fira Code',monospace;">Another excuse →</button>
+</div>
+
+<!-- 4. Fake terminal -->
+<div id="fake-terminal" style="display:none;position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);width:min(600px,90vw);background:#0a0a0a;border:1px solid #22c55e;border-radius:12px;z-index:9994;font-family:'Fira Code',monospace;font-size:.8rem;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.8);">
+  <div style="background:#1a1a1a;padding:.5rem 1rem;display:flex;align-items:center;gap:.5rem;border-bottom:1px solid #22c55e33;">
+    <span style="width:10px;height:10px;border-radius:50%;background:#ef4444;display:block;"></span>
+    <span style="width:10px;height:10px;border-radius:50%;background:#f59e0b;display:block;"></span>
+    <span style="width:10px;height:10px;border-radius:50%;background:#22c55e;display:block;"></span>
+    <span style="color:#22c55e;font-size:.72rem;margin-left:.5rem;">maizied@portfolio:~$</span>
+    <button onclick="document.getElementById('fake-terminal').style.display='none'" style="margin-left:auto;background:none;border:none;color:#666;cursor:pointer;font-size:.9rem;">✕</button>
+  </div>
+  <div id="terminal-output" style="padding:1rem;height:200px;overflow-y:auto;color:#22c55e;line-height:1.8;"></div>
+  <div style="display:flex;align-items:center;padding:.5rem 1rem;border-top:1px solid #22c55e33;gap:.5rem;">
+    <span style="color:#22c55e;">$</span>
+    <input id="terminal-input" type="text" placeholder="type a command... (try: help)" style="flex:1;background:none;border:none;outline:none;color:#22c55e;font-family:'Fira Code',monospace;font-size:.8rem;"/>
   </div>
 </div>
 
