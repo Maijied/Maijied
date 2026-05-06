@@ -5,9 +5,10 @@
 
 <img src="https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&size=18&duration=3000&pause=1000&color=00F5FF&center=true&vCenter=true&width=600&lines=Analytical+%26+Detail-Oriented+Developer;Full-Stack+%7C+Mobile+%7C+Game+Dev+%7C+IoT;Building+the+future%2C+one+commit+at+a+time;Currently+%40+Shohoz+%E2%80%94+Dhaka%2C+Bangladesh" alt="Typing SVG" />
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/maizied/)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Maijied)
-[![Profile Views](https://komarev.com/ghpvc/?username=Maijied&style=for-the-badge&color=00f5ff&label=PROFILE+SCANS)](https://github.com/Maijied)
+ [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&label=Connect)](https://www.linkedin.com/in/maizied/)
+ [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white&label=Repos)](https://github.com/Maijied)
+ [![Profile Views](https://img.shields.io/badge/PROFILE_VIEWS-199-161B22?style=for-the-badge&color=161B22&labelColor=555555)](https://github.com/Maijied)
+ [![Portfolio](https://img.shields.io/badge/🌐_Portfolio-0D1117?style=for-the-badge&logo=githubpages&logoColor=00f5ff&label=Live)](https://maijied.github.io/Maijied/)
 
 </div>
 
