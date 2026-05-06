@@ -76,13 +76,17 @@ STATUS       : [ ACTIVE ]
 
 ---
 
-## ◈ PROJECT ARCHIVES — MISSION LOG
+  ## ◈  MISSION LOG
 
-> Spanning game engines, mobile platforms, web systems, IoT hardware, and AI experiments.
+    -Senior Software Engineer with 6+ years building scalable, production-grade systems. Currently at Shohoz Ltd, where I engineer backend infrastructure that handles millions of concurrent users during peak seasons — keeping everything smooth under pressure.
 
----
+    -Founded Lorapok Labs, an open-source ecosystem with 20+ shipped projects: a cross-platform media player (Web, Windows, Mac, Linux Snap), a Laravel real-time execution monitor on Packagist, a Bangla NLP AI keyboard for Android, browser extensions on Firefox AMO, a multi-platform roast API on npm/PyPI/Packagist, and an AI coding agent — all actively maintained.
 
-### 🌍 OPEN SOURCE SECTOR
+   **Shohoz Ltd and Lorapok Labs** make bold
+
+ ---
+
+ ### 🌍 OPEN SOURCE SECTOR
 
 | Project | Links | Description |
 |---------|-------|-------------|
