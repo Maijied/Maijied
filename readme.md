@@ -181,18 +181,31 @@ STATUS       : [ ACTIVE ]
 
 ## ◈ EXPERIENCE LOG
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│  CURRENT MISSION                                                │
-│  ─────────────────────────────────────────────────────────────  │
-│  Organization : Shohoz                                          │
-│  Role         : Senior Software Engineer                        │
-│  Location     : Dhaka, Bangladesh                               │
-│  Status       : [ ACTIVE ]                                      │
-└─────────────────────────────────────────────────────────────────┘
-```
+ ```
+ ┌─────────────────────────────────────────────────────────────────┐
+ │  CURRENT MISSION                                                │
+ │  ─────────────────────────────────────────────────────────────  │
+ │  Organization : Shohoz                                          │
+ │  Role         : Senior Software Engineer                        │
+ │  Location     : Dhaka, Bangladesh                               │
+ │  Status       : [ ACTIVE ]                                      │
+ └─────────────────────────────────────────────────────────────────┘
+ ```
 
----
+  ```
+  ┌──────────────────────────────────────────────────────────────────┐
+  │  SIDE PROJECT / OPEN SOURCE                                      │
+  │  ──────────────────────────────────────────────────────────────  │
+  │  Project     : Lorapok Labs                                      │
+  │  Role        : Founder & Maintainer                              │
+  │  Focus       : Cross-platform media, Laravel packages, Android AI│
+  │  Projects    : 20+ (Lorapok Atlas, Media Player, AI Agent, etc.) │
+  │  Platforms   : Web · Windows · Mac · Linux · Android · npm · PyPI│
+  │  Status      : [ ACTIVE ]                                        │
+  └──────────────────────────────────────────────────────────────────┘
+  ```
+
+ ---
 
 ## ◈ CERTIFICATIONS & CLEARANCES
 
