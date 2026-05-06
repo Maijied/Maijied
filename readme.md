@@ -6,7 +6,7 @@
 <img src="https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&size=18&duration=3000&pause=1000&color=00F5FF&center=true&vCenter=true&width=600&lines=Analytical+%26+Detail-Oriented+Developer;Full-Stack+%7C+Mobile+%7C+Game+Dev+%7C+IoT;Building+the+future%2C+one+commit+at+a+time;Currently+%40+Shohoz+%E2%80%94+Dhaka%2C+Bangladesh" alt="Typing SVG" />
 
  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&label=Connect)](https://www.linkedin.com/in/maizied/)
- [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white&label=Repos)](https://github.com/Maijied)
+ [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white&label=Repos)](https://github.com/Maijied?tab=repositories)
  [![Profile Views](https://img.shields.io/badge/PROFILE_VIEWS-199-161B22?style=for-the-badge&color=161B22&labelColor=555555)](https://github.com/Maijied)
  [![Portfolio](https://img.shields.io/badge/🌐_Portfolio-0D1117?style=for-the-badge&logo=githubpages&logoColor=00f5ff&label=Live)](https://maijied.github.io/Maijied/)
 
@@ -86,7 +86,8 @@ STATUS       : [ ACTIVE ]
 
 | Project | Links | Description |
 |---------|-------|-------------|
-| [🎵 Lorapok Media Player](https://github.com/Maijied/Lorapok_Media_Player) | [🌐 Web](https://maijied.github.io/Lorapok_Media_Player/) · [📦 npm](https://www.npmjs.com/package/lorapok-player) · [🐧 Snap](https://snapcraft.io/lorapokmediaplayer) · [⚙️ CI/CD](https://github.com/Maijied/Lorapok_Media_Player/blob/main/.github/workflows/workflow-unified.yml) | Cross-platform media player (Web, Windows, Mac, Linux Snap). Complex multi-target engineering workflow. |
+ | [🗺️ Lorapok Atlas API Directory](https://github.com/Maijied/Lorapok-API_Atlas) | [🌐 Web](https://maijied.github.io/Lorapok-API_Atlas/) · [📦 npm](https://www.npmjs.com/package/lorapok-atlas) · [📦 MCP npm](https://www.npmjs.com/package/lorapok-atlas-mcp) · [🛠️ VS Code](https://marketplace.visualstudio.com/items?itemName=lorapok.lorapok-atlas) · [📖 CLoudflare API](https://github.com/Maijied/Lorapok-API_Atlas/tree/main/packages/lorapok-atlas-api) | 2100+ free APIs in one place. Live test in browser — no setup. AI assistant to find, explain & generate code. NPM packages, MCP server for Claude/Cursor/Kiro, VS Code extension. 100% MIT open-source. |
+ | [🎵 Lorapok Media Player](https://github.com/Maijied/Lorapok_Media_Player) | [🌐 Web](https://maijied.github.io/Lorapok_Media_Player/) · [📦 npm](https://www.npmjs.com/package/lorapok-player) · [🐧 Snap](https://snapcraft.io/lorapokmediaplayer) · [⚙️ CI/CD](https://github.com/Maijied/Lorapok_Media_Player/blob/main/.github/workflows/workflow-unified.yml) | Cross-platform media player (Web, Windows, Mac, Linux Snap). Complex multi-target engineering workflow. |
 | [🤖 Lorapok AI Agent](https://github.com/Maijied/Lorapok_AI_Agent) | [GitHub](https://github.com/Maijied/Lorapok_AI_Agent) | AI coding agent — currently in active development |
 | [🃏 Hazari Scoreboard](https://github.com/Maijied/Hazari_Scoreboard) | [🌐 Live](https://maijied.github.io/Hazari_Scoreboard/) | Card game scoreboard tracker |
 | [📊 Lorapok — Laravel Execution Monitor](https://github.com/Maijied/lorapok) | [🌐 Web](https://maijied.github.io/lorapok/) · [📦 Packagist](https://packagist.org/packages/lorapok/laravel-execution-monitor) | Laravel package for real-time execution monitoring |
