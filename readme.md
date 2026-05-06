@@ -267,8 +267,9 @@ STATUS       : [ ACTIVE ]
 
 <div align="center">
 
-[![LinkedIn](https://img.shields.io/badge/Connect_on_LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/maizied/)
-[![GitHub](https://img.shields.io/badge/Explore_Repos-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Maijied?tab=repositories)
+ [![LinkedIn](https://img.shields.io/badge/Connect_on_LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/maijied/)
+ [![GitHub](https://img.shields.io/badge/Explore_Repos-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Maijied?tab=repositories)
+ [![Lorapok Labs](https://img.shields.io/badge/🦊_Explore_Lorapok_Labs-0D1117?style=for-the-badge&logoColor=00f5ff)](https://lorapok.github.io/)
 
 </div>
 
