@@ -64,9 +64,17 @@ function initTypingEffect() {
   const el = document.getElementById('typing-skill');
   if (!el) return;
   const skills = [
-    'Full Stack Engineer', 'Laravel Developer', 'React Developer',
-    'Node.js Engineer', 'Mobile Developer', 'Open Source Builder', 'Vibe Coder 💯'
+    'production Laravel backends',
+    'full-stack travel systems',
+    'React and Node.js products',
+    'AI agents and developer tools',
+    'Android and Bangla NLP',
+    'open-source ecosystems'
   ];
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    el.textContent = skills[0];
+    return;
+  }
   let si = 0, ci = 0, deleting = false;
   function tick() {
     const word = skills[si];
@@ -77,43 +85,92 @@ function initTypingEffect() {
       el.textContent = word.slice(0, --ci);
       if (ci === 0) { deleting = false; si = (si + 1) % skills.length; }
     }
-    setTimeout(tick, deleting ? 60 : 90);
+    setTimeout(tick, deleting ? 45 : 70);
   }
   tick();
+}
+
+let bioIntroStarted = false;
+function initBioIntro() {
+  if (bioIntroStarted) return;
+  bioIntroStarted = true;
+  const intro = document.getElementById('hero-intro');
+  const bio = document.getElementById('hero-bio');
+  if (intro) intro.classList.add('is-revealed');
+  if (!bio) return;
+  const full = bio.textContent.trim();
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  bio.classList.add('is-typing');
+  bio.textContent = '';
+  let i = 0;
+  function tick() {
+    bio.textContent = full.slice(0, ++i);
+    if (i < full.length) setTimeout(tick, 16);
+    else bio.classList.remove('is-typing');
+  }
+  setTimeout(tick, 280);
+}
+
+function initStatCounters() {
+  const nums = document.querySelectorAll('.stat-num[data-count]');
+  if (!nums.length) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      obs.unobserve(el);
+      const target = Number(el.dataset.count);
+      const suffix = el.textContent.replace(/[\d.]/g, '') || '+';
+      if (reduce) { el.textContent = target + suffix; return; }
+      const start = performance.now();
+      const duration = 1100;
+      function frame(now) {
+        const t = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = Math.round(target * eased) + suffix;
+        if (t < 1) requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    });
+  }, { threshold: 0.5 });
+  nums.forEach(el => obs.observe(el));
 }
 
 // ===== SKILLS =====
 function initSkills() {
   const grid = document.getElementById('skills-grid');
   if (!grid) return;
-  const skills = [
-    { name: 'PHP/Laravel', pct: 88, icon: '🐘' },
-    { name: 'JavaScript', pct: 85, icon: '⚡' },
-    { name: 'HTML/CSS', pct: 90, icon: '🎨' },
-    { name: 'MySQL', pct: 84, icon: '🗄️' },
-    { name: 'REST APIs', pct: 82, icon: '🔗' },
-    { name: 'Git/GitHub', pct: 85, icon: '🐙' },
-    { name: 'React', pct: 78, icon: '⚛️' },
-    { name: 'Node.js', pct: 76, icon: '🟢' },
-    { name: 'LLM / AI', pct: 90, icon: '🤖' },
-    { name: 'Android', pct: 72, icon: '📱' },
-    { name: 'C#/.NET', pct: 68, icon: '🔷' },
-    { name: 'DevOps', pct: 50, icon: '⚙️' }
-  ];
-  grid.innerHTML = skills.map(s => {
-    const level = s.pct >= 80 ? 'ADVANCED' : 'INTERMEDIATE';
-    const cls = s.pct >= 80 ? 'advanced' : '';
-    return `<div class="skill-card">
-      <div class="skill-header">
-        <span class="skill-name">${s.icon} ${s.name}</span>
-        <span class="skill-level ${cls}">${level}</span>
-      </div>
-      <div class="skill-bar-wrap">
-        <div class="skill-bar"><div class="skill-bar-fill" data-pct="${s.pct}"></div></div>
-        <span class="skill-pct">${s.pct}%</span>
-      </div>
-    </div>`;
-  }).join('');
+  if (!grid.querySelector('.skill-card')) {
+    const skills = [
+      { name: 'PHP/Laravel', pct: 88, icon: '🐘' },
+      { name: 'JavaScript', pct: 85, icon: '⚡' },
+      { name: 'HTML/CSS', pct: 90, icon: '🎨' },
+      { name: 'MySQL', pct: 84, icon: '🗄️' },
+      { name: 'REST APIs', pct: 82, icon: '🔗' },
+      { name: 'Git/GitHub', pct: 85, icon: '🐙' },
+      { name: 'React', pct: 78, icon: '⚛️' },
+      { name: 'Node.js', pct: 76, icon: '🟢' },
+      { name: 'LLM / AI', pct: 90, icon: '🤖' },
+      { name: 'Android', pct: 72, icon: '📱' },
+      { name: 'C#/.NET', pct: 68, icon: '🔷' },
+      { name: 'DevOps', pct: 50, icon: '⚙️' }
+    ];
+    grid.innerHTML = skills.map(s => {
+      const level = s.pct >= 80 ? 'ADVANCED' : 'INTERMEDIATE';
+      const cls = s.pct >= 80 ? 'advanced' : '';
+      return `<div class="skill-card">
+        <div class="skill-header">
+          <span class="skill-name">${s.icon} ${s.name}</span>
+          <span class="skill-level ${cls}">${level}</span>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar"><div class="skill-bar-fill" data-pct="${s.pct}"></div></div>
+          <span class="skill-pct">${s.pct}%</span>
+        </div>
+      </div>`;
+    }).join('');
+  }
 
   // Animate bars on scroll
   const observer = new IntersectionObserver(entries => {
@@ -148,38 +205,90 @@ const CUSTOM_PROJECTS = {
 
 async function fetchProjects() {
   const grid = document.getElementById('projects-grid');
+  const filtersEl = document.getElementById('projects-filters');
+  const showAllBtn = document.getElementById('projects-show-all');
   if (!grid) return;
-  grid.innerHTML = '<div class="projects-loading">Loading repositories...</div>';
-  const SKIP = ['Maijied'];
+
   const COLORS = ['var(--accent)','#ff6600','#ffd700','#00ff88','#0088ff','#aa00ff','#ff0088','#00ffff','#ff4444'];
-  try {
-    const res = await fetch('https://api.github.com/users/Maijied/repos?sort=updated&per_page=20');
-    if (!res.ok) throw new Error('GitHub API error');
-    const repos = await res.json();
-    const filtered = repos.filter(r => !SKIP.includes(r.name)).slice(0, 9);
-    if (!filtered.length) { grid.innerHTML = '<div class="projects-loading">No projects found.</div>'; return; }
-    grid.innerHTML = filtered.map((r, i) => {
-      const custom = CUSTOM_PROJECTS[r.name];
-      const name = custom?.name || r.name;
-      const desc = custom?.desc || r.description || 'No description provided.';
+  const CAT_LABEL = {
+    flagship: 'Flagship',
+    ai: 'AI & agents',
+    devtools: 'Developer tools',
+    packages: 'Packages',
+    games: 'Games / legacy',
+    other: 'More',
+  };
+
+  let all = [];
+  let filter = 'featured';
+  let showAll = false;
+
+  const render = () => {
+    let list = all.slice();
+    if (filter === 'featured') list = list.filter((p) => p.featured);
+    else if (filter !== 'all') list = list.filter((p) => p.category === filter);
+    if (!showAll && filter === 'featured') list = list.slice(0, 12);
+    if (!list.length) {
+      grid.innerHTML = '<div class="projects-loading">No projects in this filter.</div>';
+      return;
+    }
+    grid.innerHTML = list.map((p, i) => {
+      const custom = CUSTOM_PROJECTS[p.name];
+      const name = custom?.name || p.title || p.name;
+      const desc = custom?.desc || p.description || 'Open-source project.';
       return `
-      <div class="project-card" style="border-left-color:${COLORS[i % COLORS.length]}">
+      <article class="project-card" style="border-left-color:${COLORS[i % COLORS.length]}">
         <div class="project-card-header">
-          <span class="project-name">${name}</span>
-          <span class="project-stars">⭐ ${r.stargazers_count}</span>
+          <h3 class="project-name">${name}</h3>
+          <span class="project-stars">⭐ ${p.stars ?? 0}</span>
         </div>
         <p class="project-desc">${desc}</p>
         <div class="project-footer">
-          <span class="project-lang">${r.language || 'N/A'}</span>
+          <span class="project-lang">${p.language || CAT_LABEL[p.category] || 'Open source'}</span>
           <div class="project-links">
-            <a href="${r.html_url}" target="_blank" class="project-link">GitHub</a>
-            ${r.homepage ? `<a href="${r.homepage}" target="_blank" class="project-link">Live</a>` : ''}
+            <a href="${p.html_url}" target="_blank" rel="noopener noreferrer" class="project-link">GitHub</a>
+            ${p.homepage ? `<a href="${p.homepage}" target="_blank" rel="noopener noreferrer" class="project-link">Live</a>` : ''}
           </div>
         </div>
-      </div>`;
+      </article>`;
     }).join('');
+  };
+
+  const paintFilters = () => {
+    if (!filtersEl) return;
+    const cats = ['featured', 'flagship', 'ai', 'devtools', 'packages', 'games', 'all'];
+    filtersEl.innerHTML = cats.map((c) => {
+      const label = c === 'featured' ? 'Featured' : c === 'all' ? 'All' : (CAT_LABEL[c] || c);
+      const active = filter === c;
+      return `<button type="button" data-filter="${c}" class="project-filter-btn" style="padding:.35rem .75rem;border-radius:999px;border:1px solid ${active ? 'var(--accent)' : 'rgba(255,255,255,.15)'};background:${active ? 'rgba(255,80,80,.15)' : 'transparent'};color:inherit;cursor:pointer;font-size:.8rem;">${label}</button>`;
+    }).join('');
+    filtersEl.querySelectorAll('[data-filter]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        filter = btn.getAttribute('data-filter');
+        showAll = filter !== 'featured';
+        paintFilters();
+        render();
+      });
+    });
+  };
+
+  try {
+    const res = await fetch('./projects.json?v=' + Date.now());
+    if (!res.ok) throw new Error('catalog missing');
+    all = await res.json();
+    paintFilters();
+    render();
+    if (showAllBtn) {
+      showAllBtn.addEventListener('click', () => {
+        filter = 'all';
+        showAll = true;
+        paintFilters();
+        render();
+        showAllBtn.textContent = `Showing ${all.length} projects`;
+      });
+    }
   } catch (e) {
-    grid.innerHTML = '<div class="projects-loading">Could not load projects. <a href="https://github.com/Maijied?tab=repositories" target="_blank" style="color:var(--accent)">View on GitHub</a></div>';
+    grid.innerHTML = '<div class="projects-loading">Could not load catalog. <a href="https://github.com/Maijied?tab=repositories" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">View on GitHub</a></div>';
   }
 }
 
@@ -358,7 +467,10 @@ function initLoadingScreen(themeName) {
   const delay = 2200 + Math.random() * 800;
   setTimeout(() => {
     screen.style.opacity = '0';
-    setTimeout(() => { screen.style.display = 'none'; }, 500);
+    setTimeout(() => {
+      screen.style.display = 'none';
+      window.dispatchEvent(new Event('portfolio:ready'));
+    }, 500);
   }, delay);
 }
 
@@ -672,7 +784,7 @@ function initFadeIn() {
   const style = document.createElement('style');
   style.textContent = '.fade-in-section{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}.fade-in-section.visible{opacity:1;transform:none}';
   document.head.appendChild(style);
-  const sections = document.querySelectorAll('.section-theme, .skill-card, .project-card');
+  const sections = document.querySelectorAll('.section-theme:not(#home), .skill-card, .project-card');
   sections.forEach(el => el.classList.add('fade-in-section'));
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
@@ -896,10 +1008,92 @@ function initSupportModal() {
   closeBtn?.addEventListener('click', () => modal?.classList.add('hidden'));
 }
 
+// ===== GOOGLE ANALYTICS 4 (Cloudflare Google Tag Gateway, G-ZK619CZWHM) =====
+const GA_MEASUREMENT_ID = 'G-ZK619CZWHM';
+
+function gaEvent(name, params) {
+  if (typeof window.gtag !== 'function') return;
+  window.gtag('event', name, params);
+}
+
+function initAnalytics() {
+  const waitForGtag = (cb) => {
+    if (typeof window.gtag === 'function') return cb();
+    const started = Date.now();
+    const timer = setInterval(() => {
+      if (typeof window.gtag === 'function') {
+        clearInterval(timer);
+        cb();
+      } else if (Date.now() - started > 10000) {
+        clearInterval(timer);
+      }
+    }, 250);
+  };
+
+  waitForGtag(() => {
+    gaEvent('view_section', {
+      section_id: (location.hash || '#home').slice(1) || 'home',
+      content_group: (location.hash || '#home').slice(1) || 'home',
+      engagement_time_msec: 1
+    });
+  });
+
+  let lastSection = (location.hash || '#home').slice(1) || 'home';
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const id = entry.target.id;
+      if (!id || id === lastSection) return;
+      lastSection = id;
+      gaEvent('view_section', {
+        section_id: id,
+        content_group: id,
+        page_path: '/#' + id,
+        page_title: document.title + ' — ' + id
+      });
+    });
+  }, { threshold: 0.45 });
+  document.querySelectorAll('section[id]').forEach(section => sectionObserver.observe(section));
+
+  document.addEventListener('click', event => {
+    const link = event.target.closest('a[href]');
+    if (!link) return;
+    const href = link.getAttribute('href') || '';
+    if (href.startsWith('mailto:')) {
+      gaEvent('generate_lead', { method: 'email', link_url: href, outbound: true });
+      return;
+    }
+    if (href.startsWith('#')) {
+      gaEvent('select_content', { content_type: 'section_nav', item_id: href.slice(1) });
+      return;
+    }
+    try {
+      const url = new URL(href, location.href);
+      if (url.hostname !== location.hostname) {
+        const host = url.hostname;
+        const method = /github/.test(host) ? 'github' : /linkedin/.test(host) ? 'linkedin' : /t\.me|telegram/.test(host) ? 'telegram' : 'outbound';
+        gaEvent(method === 'outbound' ? 'click' : 'generate_lead', {
+          method,
+          link_url: url.href,
+          link_domain: host,
+          outbound: true
+        });
+      }
+    } catch (_) { /* ignore invalid hrefs */ }
+  });
+
+  document.getElementById('coffee-btn-main')?.addEventListener('click', () => {
+    gaEvent('select_content', { content_type: 'support', item_id: 'buy_me_a_coffee' });
+  });
+}
+
 // ===== INIT ALL =====
 document.addEventListener('DOMContentLoaded', () => {
   const activeTheme = initTheme();   // random theme first
   initLoadingScreen(activeTheme);    // loader matches theme
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.getElementById('hero-intro')?.classList.add('will-animate');
+  }
   initDotCursor();
   updateCursorForTheme(activeTheme); // cursor shape matches theme
   initModernMenu();
@@ -907,6 +1101,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTypingEffect();
   initSkills();
   fetchProjects();
+  initStatCounters();
   initCSSDragon();
   initRealSnake();
   initSectionThemes();
@@ -915,6 +1110,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
   initFadeIn();
   initActiveNav();
+  initAnalytics();
 });
+
+window.addEventListener('portfolio:ready', initBioIntro);
+setTimeout(initBioIntro, 3800);
 
 

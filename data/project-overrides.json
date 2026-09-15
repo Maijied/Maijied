@@ -1,0 +1,101 @@
+{
+  "SeeYou": {
+    "title": "SeeYou",
+    "blurb": "Agentic SEO specialist (iCanSeeYou) — remote MCP, API, dashboard, render-gap + AEO audits, ROI fix plans.",
+    "category": "flagship",
+    "homepage": "https://seeyou.lorapok.tech/",
+    "featured": true
+  },
+  "Lorapok-API_Atlas": {
+    "title": "Lorapok API Atlas",
+    "blurb": "Directory of 2,100+ public APIs with in-browser testing, AI assistant, npm, MCP, and VS Code extension.",
+    "category": "flagship",
+    "homepage": "https://atlas.lorapok.tech/",
+    "featured": true
+  },
+  "Lorapok_Media_Player": {
+    "title": "Lorapok Media Player",
+    "blurb": "Cross-platform player for Web, Windows, macOS, and Linux Snap with sensory UI.",
+    "category": "flagship",
+    "homepage": "https://media.lorapok.tech/",
+    "featured": true
+  },
+  "Lorapok_AI_Agent": {
+    "title": "Lorapok AI Agent",
+    "blurb": "Autonomous coding agent for terminal and full-stack engineering.",
+    "category": "ai",
+    "homepage": "https://ai.lorapok.tech/",
+    "featured": true
+  },
+  "Loragent": {
+    "title": "Loragent",
+    "blurb": "Multi-agent orchestration framework and AI marketplace.",
+    "category": "ai",
+    "homepage": "https://loragent.lorapok.tech/",
+    "featured": true
+  },
+  "Cursor-Curse-Monitor-by-Lorapok": {
+    "title": "Cursor Curse Monitor",
+    "blurb": "Live Cursor usage, budget, and billing dashboard.",
+    "category": "devtools",
+    "homepage": "https://cursor.lorapok.tech/",
+    "featured": true
+  },
+  "Reportkit-Core": {
+    "title": "ReportKit",
+    "blurb": "Chunked, zero re-query PHP reporting stack for multi-DB Laravel workloads.",
+    "category": "flagship",
+    "homepage": "https://reportkit.lorapok.tech/",
+    "featured": true
+  },
+  "AswitchI": {
+    "title": "AswitchI",
+    "blurb": "Launchpad-style app switcher for Ubuntu.",
+    "category": "devtools",
+    "homepage": "https://aswitchi.lorapok.tech/",
+    "featured": true
+  },
+  "Lorapok-Keyboard": {
+    "title": "Lorapok Keyboard",
+    "blurb": "Android Bangla NLP keyboard with a 2.3M+ word vocabulary.",
+    "category": "packages",
+    "featured": true
+  },
+  "roast-as-a-service": {
+    "title": "Roast as a Service",
+    "blurb": "Humor API published on npm, PyPI, and Packagist.",
+    "category": "packages",
+    "featured": true
+  },
+  "linpad": {
+    "title": "Linpad",
+    "blurb": "Minimal Ubuntu editor with syntax highlighting.",
+    "category": "devtools",
+    "featured": false
+  },
+  "lorapok.github.io": {
+    "title": "Lorapok Labs hub",
+    "blurb": "Studio portal — Biological UI, product catalog, and Lorapok brand home.",
+    "category": "flagship",
+    "homepage": "https://lorapok.tech/",
+    "featured": true
+  },
+  "Love-and-lust": {
+    "title": "Life vs Greed",
+    "blurb": "Investigation site on Cox’s Bazar forest encroachment.",
+    "category": "games",
+    "featured": false
+  },
+  "AirHockey_Unity3D_AndroidGame": {
+    "title": "Air Hockey",
+    "blurb": "Single and multiplayer Unity air hockey for Android.",
+    "category": "games",
+    "featured": false
+  },
+  "spotlight-tickets": {
+    "title": "Spotlight Tickets",
+    "blurb": "Self-hosted event ticketing platform.",
+    "category": "devtools",
+    "featured": false
+  }
+}
