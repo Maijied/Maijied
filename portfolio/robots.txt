@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /googlee761e8b4e21d7195.html
+
+Sitemap: https://maizied.lorapok.tech/sitemap.xml

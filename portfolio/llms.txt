@@ -1,0 +1,28 @@
+# Mohammad Maizied Hasan Majumder
+
+> Senior Software Engineer at Shohoz in Dhaka, Bangladesh. Founder and principal engineer of Lorapok Labs. B.Sc. CSE, Shahjalal University of Science and Technology.
+
+- Site: https://maizied.lorapok.tech/
+- GitHub: https://github.com/Maijied
+- LinkedIn: https://www.linkedin.com/in/maizied/
+- Telegram: https://t.me/maizied
+- Email: mdshvo40@gmail.com
+
+## Work
+
+At Shohoz he builds backend and full-stack systems for national-scale bus, train, flight, and event booking. Lorapok Labs is a 20+ product open-source studio covering AI agents, Laravel packages, media engines, Bangla NLP, and developer tooling.
+
+## Skills
+
+PHP/Laravel, JavaScript, TypeScript, React, Node.js, MySQL, REST APIs, Android, C#/.NET, Python, Unity, DevOps, LLM/AI.
+
+## Selected products
+
+- Lorapok API Atlas (2,100+ APIs) — https://atlas.lorapok.tech/
+- Lorapok AI Agent — https://ai.lorapok.tech/
+- Loragent — https://loragent.lorapok.tech/
+- Cursor Curse Monitor — https://cursor.lorapok.tech/
+- ReportKit — https://reportkit.lorapok.tech/
+- Lorapok Media Player — https://media.lorapok.tech/
+- AswitchI — https://aswitchi.lorapok.tech/
+- Laravel Execution Monitor — https://packagist.org/packages/lorapok/laravel-execution-monitor

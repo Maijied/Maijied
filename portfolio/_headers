@@ -1,0 +1,35 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+/
+  Link: <https://maizied.lorapok.tech/>; rel="canonical"
+
+/404.html
+  X-Robots-Tag: noindex, nofollow
+
+/googlee761e8b4e21d7195.html
+  X-Robots-Tag: noindex
+
+/og-image.jpg
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
+
+/avatar-512.jpg
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
+
+/avatar-512.webp
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
+
+/icon-192.jpg
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
+
+/og-image.webp
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
+
+/*.css
+  Cache-Control: public, max-age=300, must-revalidate
+
+/*.js
+  Cache-Control: public, max-age=300, must-revalidate

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://maizied.lorapok.tech/</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://maizied.lorapok.tech/og-image.jpg</image:loc>
+      <image:title>Mohammad Maizied Hasan Majumder</image:title>
+      <image:caption>Portrait of Full Stack Software Engineer Mohammad Maizied Hasan Majumder in Dhaka, Bangladesh</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://maizied.lorapok.tech/avatar-512.jpg</image:loc>
+      <image:title>Maizied portrait</image:title>
+      <image:caption>Headshot of Mohammad Maizied Hasan Majumder</image:caption>
+    </image:image>
+  </url>
+</urlset>

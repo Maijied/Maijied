@@ -1,0 +1,25 @@
+{
+  "name": "Mohammad Maizied Hasan Majumder",
+  "short_name": "Maizied",
+  "description": "Full Stack Software Engineer in Dhaka, Bangladesh — Laravel, React, Node.js, mobile, and open source.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0d0d0d",
+  "theme_color": "#0d0d0d",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "./icon-192.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "./avatar-512.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}
