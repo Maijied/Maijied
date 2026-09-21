@@ -12,7 +12,7 @@
     "category": "flagship",
     "featured": true,
     "topics": [],
-    "updated_at": "2026-09-15T08:01:18Z"
+    "updated_at": "2026-09-21T11:08:53Z"
   },
   {
     "name": "Lorapok_AI_Agent",
@@ -123,7 +123,7 @@
       "security-scanner",
       "security-tools"
     ],
-    "updated_at": "2026-09-12T19:50:37Z"
+    "updated_at": "2026-09-18T10:26:44Z"
   },
   {
     "name": "Loragent",
@@ -181,7 +181,7 @@
       "php",
       "reporting"
     ],
-    "updated_at": "2026-09-15T07:50:17Z"
+    "updated_at": "2026-09-21T12:22:08Z"
   },
   {
     "name": "roast-as-a-service",
@@ -211,7 +211,7 @@
     "category": "flagship",
     "featured": true,
     "topics": [],
-    "updated_at": "2026-09-15T08:01:13Z"
+    "updated_at": "2026-09-15T09:57:31Z"
   },
   {
     "name": "AirHockey_Unity3D_AndroidGame",
@@ -636,11 +636,11 @@
     "homepage": "https://maijied.github.io/Maijied/",
     "html_url": "https://github.com/Maijied/Maijied",
     "stars": 3,
-    "language": "CSS",
+    "language": "HTML",
     "category": "ai",
     "featured": false,
     "topics": [],
-    "updated_at": "2026-08-05T10:12:18Z"
+    "updated_at": "2026-09-15T11:27:13Z"
   },
   {
     "name": "Maijied-KaraokeAndroidAppDesign",
@@ -1513,7 +1513,7 @@
     "category": "devtools",
     "featured": false,
     "topics": [],
-    "updated_at": "2026-09-15T08:17:12Z"
+    "updated_at": "2026-09-16T13:12:22Z"
   },
   {
     "name": "dCursor",
@@ -1760,6 +1760,21 @@
     "featured": false,
     "topics": [],
     "updated_at": "2026-05-24T21:35:54Z"
+  },
+  {
+    "name": "lorapy",
+    "title": "lorapy",
+    "full_name": "Maijied/lorapy",
+    "owner": "Maijied",
+    "description": "Open-source project by Maijied / Lorapok Labs.",
+    "homepage": "",
+    "html_url": "https://github.com/Maijied/lorapy",
+    "stars": 0,
+    "language": null,
+    "category": "other",
+    "featured": false,
+    "topics": [],
+    "updated_at": "2026-09-21T10:01:41Z"
   },
   {
     "name": "LoraShare",

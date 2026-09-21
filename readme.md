@@ -203,6 +203,7 @@ Auto-synced from GitHub (`Maijied` + `Lorapok`). Run `node scripts/sync-projects
 | **Larvox** | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Larvox) · [Live](https://maijied.github.io/Larvox/) |
 | **LiraTV** | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/LiraTV) |
 | **Lora TV** | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Lora-TV) |
+| **lorapy** | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/lorapy) |
 | **LoraShare** | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/LoraShare) |
 | **LoraSports** | The Tactician's Logbook — FIFA World Cup 2026 in your Firefox toolbar. | [GitHub](https://github.com/Maijied/LoraSports) · [Live](https://maijied.github.io/LoraSports/) |
 | **Portfolio System** | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Portfolio-System) |
