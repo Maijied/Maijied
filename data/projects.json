@@ -12,7 +12,7 @@
     "category": "flagship",
     "featured": true,
     "topics": [],
-    "updated_at": "2026-09-21T11:08:53Z"
+    "updated_at": "2026-09-28T07:52:24Z"
   },
   {
     "name": "Lorapok_AI_Agent",
@@ -123,7 +123,7 @@
       "security-scanner",
       "security-tools"
     ],
-    "updated_at": "2026-09-18T10:26:44Z"
+    "updated_at": "2026-09-22T19:49:11Z"
   },
   {
     "name": "Loragent",
@@ -181,7 +181,7 @@
       "php",
       "reporting"
     ],
-    "updated_at": "2026-09-21T12:22:08Z"
+    "updated_at": "2026-09-28T13:18:59Z"
   },
   {
     "name": "roast-as-a-service",
@@ -640,7 +640,7 @@
     "category": "ai",
     "featured": false,
     "topics": [],
-    "updated_at": "2026-09-15T11:27:13Z"
+    "updated_at": "2026-09-21T12:43:40Z"
   },
   {
     "name": "Maijied-KaraokeAndroidAppDesign",
@@ -1634,6 +1634,21 @@
     "featured": false,
     "topics": [],
     "updated_at": "2026-06-11T15:51:52Z"
+  },
+  {
+    "name": "Lorapok-Inventory-System",
+    "title": "Lorapok Inventory System",
+    "full_name": "Maijied/Lorapok-Inventory-System",
+    "owner": "Maijied",
+    "description": "Open-source project by Maijied / Lorapok Labs.",
+    "homepage": "https://maijied.github.io/Lorapok-Inventory-System/",
+    "html_url": "https://github.com/Maijied/Lorapok-Inventory-System",
+    "stars": 0,
+    "language": "PHP",
+    "category": "flagship",
+    "featured": false,
+    "topics": [],
+    "updated_at": "2026-09-28T10:11:16Z"
   },
   {
     "name": "Lorapok-Labs-Bible",

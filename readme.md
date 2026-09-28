@@ -74,6 +74,7 @@ Auto-synced from GitHub (`Maijied` + `Lorapok`). Run `node scripts/sync-projects
 | **Bab.La** | Bab.La (Greek for "All in One") is an open-source content broadcasting platform by Lorapok Labs. From a single composer, you post anything — text, images, videos, GIFs, links, files — to all your platforms simultaneously with one click. | [GitHub](https://github.com/Maijied/Bab.La) · [Live](https://maijied.github.io/Bab.La/) |
 | **CLoraMF** | Lorapok smart  | [GitHub](https://github.com/Maijied/CLoraMF) · [Live](https://maijied.github.io/CLoraMF/) |
 | **Intellij Lorapok** | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Intellij-Lorapok) · [Live](https://maijied.github.io/Intellij-Lorapok/) |
+| **Lorapok Inventory System** | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Lorapok-Inventory-System) · [Live](https://maijied.github.io/Lorapok-Inventory-System/) |
 | **Lorapok Labs Bible** | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Lorapok-Labs-Bible) · [Live](https://maijied.github.io/Lorapok-Labs-Bible/) |
 | **LoraPok LaraTest** | Automatically run Laravel tests whenever test files are modified across all Laravel versions | [GitHub](https://github.com/Maijied/LoraPok-LaraTest) · [Live](https://kirohub.dev/resource/kirohub-generate/lorapok-laratest) |
 | **Lorapok Luvon** | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Lorapok-Luvon) |
