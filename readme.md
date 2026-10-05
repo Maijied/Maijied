@@ -195,6 +195,7 @@ Auto-synced from GitHub (`Maijied` + `Lorapok`). Run `node scripts/sync-projects
 | **lin pad** · ⭐ 1 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/lin-pad) |
 | **Linux File Replacer** · ⭐ 1 | DbReplacer — Desktop tool to switch Laravel database configs (Zenity + Bash) | [GitHub](https://github.com/Maijied/Linux-File-Replacer) |
 | **local area network scanner** · ⭐ 1 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/local-area-network-scanner) |
+| **LoraCon** · ⭐ 1 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Lorapok/LoraCon) · [Live](https://lorapok.github.io/LoraCon/) |
 | **Medical Automation System Backend** · ⭐ 1 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Medical-Automation-System-Backend) |
 | **RTSP Stream** · ⭐ 1 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/RTSP-Stream) |
 | **Rust Cookbook** · ⭐ 1 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Rust-Cookbook) |

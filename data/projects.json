@@ -12,7 +12,7 @@
     "category": "flagship",
     "featured": true,
     "topics": [],
-    "updated_at": "2026-09-28T07:52:24Z"
+    "updated_at": "2026-10-05T09:36:38Z"
   },
   {
     "name": "Lorapok_AI_Agent",
@@ -181,7 +181,7 @@
       "php",
       "reporting"
     ],
-    "updated_at": "2026-09-28T13:18:59Z"
+    "updated_at": "2026-10-05T14:01:57Z"
   },
   {
     "name": "roast-as-a-service",
@@ -640,7 +640,7 @@
     "category": "ai",
     "featured": false,
     "topics": [],
-    "updated_at": "2026-09-21T12:43:40Z"
+    "updated_at": "2026-09-28T13:48:49Z"
   },
   {
     "name": "Maijied-KaraokeAndroidAppDesign",
@@ -1319,6 +1319,21 @@
     "featured": false,
     "topics": [],
     "updated_at": "2026-04-30T11:07:00Z"
+  },
+  {
+    "name": "LoraCon",
+    "title": "LoraCon",
+    "full_name": "Lorapok/LoraCon",
+    "owner": "Lorapok",
+    "description": "Open-source project by Maijied / Lorapok Labs.",
+    "homepage": "https://lorapok.github.io/LoraCon/",
+    "html_url": "https://github.com/Lorapok/LoraCon",
+    "stars": 1,
+    "language": "JavaScript",
+    "category": "other",
+    "featured": false,
+    "topics": [],
+    "updated_at": "2026-10-04T23:48:40Z"
   },
   {
     "name": "Lorapok-LocalSync",
