@@ -66,15 +66,15 @@ Auto-synced from GitHub (`Maijied` + `Lorapok`). Run `node scripts/sync-projects
 | Project | Details | Links |
 |---|---|---|
 | **Lorapok Labs hub** · ⭐ 2 | Studio portal — Biological UI, product catalog, and Lorapok brand home. | [GitHub](https://github.com/Lorapok/lorapok.github.io) · [Live](https://lorapok.tech/) |
-| **Lorapok Media Player** · ⭐ 1 | Cross-platform player for Web, Windows, macOS, and Linux Snap with sensory UI. | [GitHub](https://github.com/Maijied/Lorapok_Media_Player) · [Live](https://media.lorapok.tech/) |
+| **Lorapok Media Player** · ⭐ 2 | Cross-platform player for Web, Windows, macOS, and Linux Snap with sensory UI. | [GitHub](https://github.com/Maijied/Lorapok_Media_Player) · [Live](https://media.lorapok.tech/) |
+| **ReportKit** · ⭐ 1 | Chunked, zero re-query PHP reporting stack for multi-DB Laravel workloads. | [GitHub](https://github.com/Maijied/Reportkit-Core) · [Live](https://reportkit.lorapok.tech/) |
 | **Lorapok API Atlas** | Directory of 2,100+ public APIs with in-browser testing, AI assistant, npm, MCP, and VS Code extension. | [GitHub](https://github.com/Lorapok/Lorapok-API_Atlas) · [Live](https://atlas.lorapok.tech/) |
-| **ReportKit** | Chunked, zero re-query PHP reporting stack for multi-DB Laravel workloads. | [GitHub](https://github.com/Maijied/Reportkit-Core) · [Live](https://reportkit.lorapok.tech/) |
 | **SeeYou** | Agentic SEO specialist (iCanSeeYou) — remote MCP, API, dashboard, render-gap + AEO audits, ROI fix plans. | [GitHub](https://github.com/Lorapok/SeeYou) · [Live](https://seeyou.lorapok.tech/) |
+| **CLoraMF** · ⭐ 1 | Lorapok smart  | [GitHub](https://github.com/Maijied/CLoraMF) · [Live](https://maijied.github.io/CLoraMF/) |
+| **Lorapok Inventory System** · ⭐ 1 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Lorapok-Inventory-System) · [Live](https://maijied.github.io/Lorapok-Inventory-System/) |
 | **Lorapok LocalSync** · ⭐ 1 | Lorapok LocalSync is a high-performance, privacy-focused communication platform designed to work exclusively on your local router’s network. No internet required, no external servers, just pure peer-to-peer and local-first interaction. | [GitHub](https://github.com/Maijied/Lorapok-LocalSync) · [Live](https://maijied.github.io/Lorapok-LocalSync/) |
 | **Bab.La** | Bab.La (Greek for "All in One") is an open-source content broadcasting platform by Lorapok Labs. From a single composer, you post anything — text, images, videos, GIFs, links, files — to all your platforms simultaneously with one click. | [GitHub](https://github.com/Maijied/Bab.La) · [Live](https://maijied.github.io/Bab.La/) |
-| **CLoraMF** | Lorapok smart  | [GitHub](https://github.com/Maijied/CLoraMF) · [Live](https://maijied.github.io/CLoraMF/) |
 | **Intellij Lorapok** | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Intellij-Lorapok) · [Live](https://maijied.github.io/Intellij-Lorapok/) |
-| **Lorapok Inventory System** | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Lorapok-Inventory-System) · [Live](https://maijied.github.io/Lorapok-Inventory-System/) |
 | **Lorapok Labs Bible** | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Lorapok-Labs-Bible) · [Live](https://maijied.github.io/Lorapok-Labs-Bible/) |
 | **LoraPok LaraTest** | Automatically run Laravel tests whenever test files are modified across all Laravel versions | [GitHub](https://github.com/Maijied/LoraPok-LaraTest) · [Live](https://kirohub.dev/resource/kirohub-generate/lorapok-laratest) |
 | **Lorapok Luvon** | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Lorapok-Luvon) |
@@ -84,11 +84,11 @@ Auto-synced from GitHub (`Maijied` + `Lorapok`). Run `node scripts/sync-projects
 
 | Project | Details | Links |
 |---|---|---|
-| **Lorapok AI Agent** · ⭐ 1 | Autonomous coding agent for terminal and full-stack engineering. | [GitHub](https://github.com/Maijied/Lorapok_AI_Agent) · [Live](https://ai.lorapok.tech/) |
-| **Loragent** | Multi-agent orchestration framework and AI marketplace. | [GitHub](https://github.com/Maijied/Loragent) · [Live](https://loragent.lorapok.tech/) |
+| **Lorapok AI Agent** · ⭐ 2 | Autonomous coding agent for terminal and full-stack engineering. | [GitHub](https://github.com/Maijied/Lorapok_AI_Agent) · [Live](https://ai.lorapok.tech/) |
+| **Loragent** · ⭐ 1 | Multi-agent orchestration framework and AI marketplace. | [GitHub](https://github.com/Maijied/Loragent) · [Live](https://loragent.lorapok.tech/) |
 | **Majhi GPT Chatbot AI Based on OPENAI ChatGPT using Vite** · ⭐ 5 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Majhi_GPT-Chatbot-AI-Based-on-OPENAI-ChatGPT-using-Vite) · [Live](https://majhi-gpt.vercel.app) |
+| **Maijied** · ⭐ 4 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Maijied) · [Live](https://maijied.github.io/Maijied/) |
 | **SourceCodeOnlineJudgeFrontEnd** · ⭐ 4 | SourceCode Online Judge is developed by  Maizied Hasan Majumder, Dept. of Computer Science Engineering, Shahjalal University of Science & Technology. It is still under development and running in α version. This project still needs lots of improvement. Any suggestion will be appreciated. Happy Coding... | [GitHub](https://github.com/Maijied/SourceCodeOnlineJudgeFrontEnd) · [Live](https://onlinejudge-beta.vercel.app) |
-| **Maijied** · ⭐ 3 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Maijied) · [Live](https://maijied.github.io/Maijied/) |
 | **Maijied KaraokeAndroidAppDesign** · ⭐ 3 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Maijied-KaraokeAndroidAppDesign) |
 | **maijied.github.io** · ⭐ 3 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/maijied.github.io) · [Live](https://maijied.github.io/) |
 | **Lorapok Dynamic Ollama LLM Chat Interface** · ⭐ 2 | This project provides a complete setup for running LLMs locally using Ollama, with a dynamic console interface similar to Gemini/Claude, web UI access via Open WebUI, VS Code integration, and API server capabilities.  | [GitHub](https://github.com/Maijied/Lorapok-Dynamic-Ollama-LLM-Chat-Interface) · [Live](https://maijied.github.io/Lorapok-Dynamic-Ollama-LLM-Chat-Interface/) |
@@ -103,16 +103,16 @@ Auto-synced from GitHub (`Maijied` + `Lorapok`). Run `node scripts/sync-projects
 
 | Project | Details | Links |
 |---|---|---|
-| **AswitchI** | Launchpad-style app switcher for Ubuntu. | [GitHub](https://github.com/Maijied/AswitchI) · [Live](https://aswitchi.lorapok.tech/) |
-| **Cursor Curse Monitor** | Live Cursor usage, budget, and billing dashboard. | [GitHub](https://github.com/Maijied/Cursor-Curse-Monitor-by-Lorapok) · [Live](https://cursor.lorapok.tech/) |
+| **AswitchI** · ⭐ 1 | Launchpad-style app switcher for Ubuntu. | [GitHub](https://github.com/Maijied/AswitchI) · [Live](https://aswitchi.lorapok.tech/) |
+| **Cursor Curse Monitor** · ⭐ 1 | Live Cursor usage, budget, and billing dashboard. | [GitHub](https://github.com/Maijied/Cursor-Curse-Monitor-by-Lorapok) · [Live](https://cursor.lorapok.tech/) |
 | **Linpad** · ⭐ 9 | Minimal Ubuntu editor with syntax highlighting. | [GitHub](https://github.com/Maijied/linpad) · [Live](https://maijied.github.io/linpad/) |
+| **Curse Monitor by Lorapok** · ⭐ 1 | Curse Monitor by Lorapok — live Cursor usage CLI + Grok Bot plugin (quotas, bonus credits, Auto/API %, billing cycle) | [GitHub](https://github.com/Maijied/Curse-Monitor-by-Lorapok) · [Live](https://maijied.github.io/Curse-Monitor-by-Lorapok/) |
+| **dCursor** · ⭐ 1 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/dCursor) |
+| **Lorapok Querycraft** · ⭐ 1 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Lorapok-Querycraft) · [Live](https://maijied.github.io/Lorapok-Querycraft/) |
+| **Reportkit Laravel** · ⭐ 1 | Laravel 5.5–13 adapter for ReportKit (reportkit/laravel) | [GitHub](https://github.com/Maijied/Reportkit-Laravel) |
+| **Reportkit Laravel Legacy** · ⭐ 1 | Laravel 4.1–5.4 adapter for ReportKit (reportkit/laravel-legacy) | [GitHub](https://github.com/Maijied/Reportkit-Laravel-Legacy) |
 | **Spotlight Tickets** · ⭐ 1 | Self-hosted event ticketing platform. | [GitHub](https://github.com/Maijied/spotlight-tickets) |
-| **Curse Monitor by Lorapok** | Curse Monitor by Lorapok — live Cursor usage CLI + Grok Bot plugin (quotas, bonus credits, Auto/API %, billing cycle) | [GitHub](https://github.com/Maijied/Curse-Monitor-by-Lorapok) · [Live](https://maijied.github.io/Curse-Monitor-by-Lorapok/) |
-| **dCursor** | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/dCursor) |
 | **Lorapok Git Geek** | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Lorapok-Git-Geek) · [Live](https://maijied.github.io/Lorapok-Git-Geek) |
-| **Lorapok Querycraft** | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Lorapok-Querycraft) · [Live](https://maijied.github.io/Lorapok-Querycraft/) |
-| **Reportkit Laravel** | Laravel 5.5–13 adapter for ReportKit (reportkit/laravel) | [GitHub](https://github.com/Maijied/Reportkit-Laravel) |
-| **Reportkit Laravel Legacy** | Laravel 4.1–5.4 adapter for ReportKit (reportkit/laravel-legacy) | [GitHub](https://github.com/Maijied/Reportkit-Laravel-Legacy) |
 
 ### Packages & distribution
 
@@ -189,29 +189,29 @@ Auto-synced from GitHub (`Maijied` + `Lorapok`). Run `node scripts/sync-projects
 | **Web Chat App Using php socket** · ⭐ 2 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Web-Chat-App-Using-php-socket) |
 | **Web Home Rest Service** · ⭐ 2 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Web-Home-Rest-Service) |
 | **Windows P2P Chat Software** · ⭐ 2 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Windows-P2P-Chat-Software) |
+| **Cineplex Ticket Bot** · ⭐ 1 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Cineplex-Ticket-Bot) |
 | **company portfolio** · ⭐ 1 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/company_portfolio) · [Live](https://company-portfolio-theta.vercel.app) |
+| **FreqGhost** · ⭐ 1 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/FreqGhost) |
 | **Hadi Memoriam** · ⭐ 1 | This repo is a small, independent tribute: a GitHub README banner and a hosted memorial page, built so the people who carry his name forward have something to point to, embed, and keep updating as the case develops. | [GitHub](https://github.com/Lorapok/Hadi-Memoriam) · [Live](https://hadi-memoriam.vercel.app) |
 | **latex tech resume template** · ⭐ 1 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/latex-tech-resume-template) |
 | **lin pad** · ⭐ 1 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/lin-pad) |
 | **Linux File Replacer** · ⭐ 1 | DbReplacer — Desktop tool to switch Laravel database configs (Zenity + Bash) | [GitHub](https://github.com/Maijied/Linux-File-Replacer) |
 | **local area network scanner** · ⭐ 1 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/local-area-network-scanner) |
 | **LoraCon** · ⭐ 1 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Lorapok/LoraCon) · [Live](https://lorapok.github.io/LoraCon/) |
+| **lorapy** · ⭐ 1 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/lorapy) |
 | **Medical Automation System Backend** · ⭐ 1 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Medical-Automation-System-Backend) |
+| **Portfolio System** · ⭐ 1 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Portfolio-System) |
 | **RTSP Stream** · ⭐ 1 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/RTSP-Stream) |
 | **Rust Cookbook** · ⭐ 1 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Rust-Cookbook) |
+| **Smilo** · ⭐ 1 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Smilo) · [Live](https://maijied.github.io/Smilo/) |
+| **storybook** · ⭐ 1 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/storybook) · [Live](https://maijied.github.io/storybook/) |
 | **sturdy adventure** · ⭐ 1 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/sturdy-adventure) |
-| **Cineplex Ticket Bot** | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Cineplex-Ticket-Bot) |
-| **FreqGhost** | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/FreqGhost) |
+| **ToR** · ⭐ 1 | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/ToR) |
 | **Larvox** | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Larvox) · [Live](https://maijied.github.io/Larvox/) |
 | **LiraTV** | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/LiraTV) |
 | **Lora TV** | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Lora-TV) |
-| **lorapy** | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/lorapy) |
 | **LoraShare** | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/LoraShare) |
 | **LoraSports** | The Tactician's Logbook — FIFA World Cup 2026 in your Firefox toolbar. | [GitHub](https://github.com/Maijied/LoraSports) · [Live](https://maijied.github.io/LoraSports/) |
-| **Portfolio System** | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Portfolio-System) |
-| **Smilo** | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/Smilo) · [Live](https://maijied.github.io/Smilo/) |
-| **storybook** | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/storybook) · [Live](https://maijied.github.io/storybook/) |
-| **ToR** | Open-source project by Maijied / Lorapok Labs. | [GitHub](https://github.com/Maijied/ToR) |
 
 ### Sites map (`*.lorapok.tech`)
 
